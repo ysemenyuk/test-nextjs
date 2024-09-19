@@ -1,13 +1,9 @@
 import cn from 'classnames';
-import { DetailedHTMLProps, HTMLAttributes } from 'react';
 import styles from './footer.module.scss';
 
-interface FooterProps
-  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
-
-export const Footer = ({ className, ...props }: FooterProps): JSX.Element => {
+export const Footer = ({ className }: any): JSX.Element => {
   return (
-    <footer className={cn(className, styles.footer)} {...props}>
+    <footer className={cn(className, styles.footer)}>
       <div className={styles.action}>
         Мы будем рады видеть Вас в числе наших заказчиков!
       </div>

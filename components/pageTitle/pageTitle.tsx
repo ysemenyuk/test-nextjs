@@ -1,14 +1,7 @@
 import cn from 'classnames';
-import { DetailedHTMLProps, HTMLAttributes } from 'react';
-import styles from './header.module.scss';
+import styles from './pageTitle.module.scss';
 
-interface HeaderProps
-  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
-
-export const PageTitle = ({
-  className,
-  ...props
-}: HeaderProps): JSX.Element => {
+export const PageTitle = ({ className }: any): JSX.Element => {
   return (
     <div className={styles.title}>
       <div className={styles.title_container}>

@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { Cuprum } from 'next/font/google';
 import './globals.css';
 import styles from './layout.module.scss';
-import { Footer } from '@/components/footer/footer';
-import { Header } from '@/components/header/header';
+import { Footer } from '@/components/Footer/Footer';
+import { Header } from '@/components/Header/Header';
 
 const roboto = Cuprum({
   weight: ['400', '500', '700'],

@@ -1,5 +1,5 @@
 import styles from './page.module.scss';
-import { PageSection } from '@/components/section/section';
+import { PageSection } from '@/components/Section/Section';
 import Link from 'next/link';
 
 export default function Home() {

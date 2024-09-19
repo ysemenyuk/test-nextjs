@@ -1,13 +1,9 @@
 import cn from 'classnames';
-import { DetailedHTMLProps, HTMLAttributes } from 'react';
 import styles from './header.module.scss';
 
-interface HeaderProps
-  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
-
-export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
+export const Header = ({ className }: any): JSX.Element => {
   return (
-    <header className={cn(className, styles.header)} {...props}>
+    <header className={cn(className, styles.header)}>
       <div className={styles.action_bar}>
         <div className={styles.action_bar_container}>
           <ul className={styles.contact_details}>
@@ -20,7 +16,6 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
           </ul>
         </div>
       </div>
-
       <div className={styles.top_bar}>
         <div className={styles.top_bar_container}>
           <div className={styles.logo}>logo</div>
