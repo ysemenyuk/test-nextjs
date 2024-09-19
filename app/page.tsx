@@ -1,34 +1,38 @@
-import { HeadSection } from '@/components/HeadSection/HeadSection';
 import styles from './page.module.scss';
-import { PageSection } from '@/components/Section/Section';
 import Link from 'next/link';
 
-const props = {
-  h1: 'ПОЖАРНОЙ СИГНАЛИЗАЦИИ',
-  h1span: 'проектирование, монтаж, обслуживание',
-  span: 'в Москве и Московской области',
-  description: `Бесплатный осмотр и расчет стоимости.
-          Совместное прохождение проверки МЧС на объекте.`,
+import { PageSection } from '@/components/Section/Section';
+import { PageTitle } from '@/components/PageTitle/PageTitle';
+
+const data = {
+  h1Top: 'проектирование, монтаж, обслуживание',
+  h1Title: 'ПОЖАРНОЙ СИГНАЛИЗАЦИИ',
+  h1Buttom: 'в Москве и Московской области',
+  descLine1: 'Бесплатный осмотр объекта и расчет стоимости.',
+  descLine2: 'Совместное прохождение проверки МЧС на объекте.',
 };
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <HeadSection {...props} />
-
-      <PageSection>
-        <Link href="/videonabludenie">videonabludenie</Link>
+    <>
+      <PageSection className={styles.headSection}>
+        <PageTitle className={styles.pageTitle} {...data} />
       </PageSection>
 
       <PageSection>
-        <Link href="/pozharnye-sistemy/">pozharnye-sistemy</Link>
+        <Link href="/videonablyudenie">videonabludenie</Link>
       </PageSection>
 
       <PageSection>
-        <Link href="/pozharnye-sistemy/pozharnaya-signalizaciya/">
-          pozharnaya-signalizaciya
-        </Link>
+        <Link href="/pozharnye-sistemy">pozharnye-sistemy</Link>
       </PageSection>
-    </main>
+
+      <PageSection columns={4}>
+        <div className={styles.col4}>div1</div>
+        <div className={styles.col4}>div2</div>
+        <div className={styles.col4}>div3</div>
+        <div className={styles.col4}>div4</div>
+      </PageSection>
+    </>
   );
 }

@@ -1,21 +1,29 @@
 import cn from 'classnames';
 import styles from './pageTitle.module.scss';
 
-export const PageTitle = ({ className }: any): JSX.Element => {
+export const PageTitle = ({
+  className,
+  h1Top,
+  h1Title,
+  h1Buttom,
+  descLine1,
+  descLine2,
+}: any): JSX.Element => {
   return (
-    <div className={styles.title}>
-      <div className={styles.title_container}>
-        <h1>
-          <span>проектирование, монтаж, обслуживание</span>
-          <br />
-          ПОЖАРНОЙ СИГНАЛИЗАЦИИ
-        </h1>
-        <span>в Москве и Московской области</span>
-        <hr />
-        <div className={styles.description}>
-          Бесплатный осмотр и расчет стоимости. <br />
-          Совместное прохождение проверки МЧС на объекте.
-        </div>
+    <div className={cn(className, styles.title)}>
+      <h1>
+        <span>{h1Top}</span>
+        <br />
+        {h1Title}
+      </h1>
+      <div className={styles.subTitle}>
+        <span>{h1Buttom}</span>
+      </div>
+      <hr />
+      <div className={styles.description}>
+        {descLine1}
+        <br />
+        {descLine2}
       </div>
     </div>
   );

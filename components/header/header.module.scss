@@ -1,16 +1,22 @@
 .header {
-  background-color: #cfcfcf;
+  z-index: 100;
+}
+
+.action_bar {
+  display: grid;
+  grid-template-columns: auto minmax(320px, 960px) auto;
+  gap: 20px;
 }
 
 .action_bar_container {
-  width: 100%;
-  max-width: 1240px;
-  margin: 0 auto;
-  outline: 1px solid blue;
+  grid-column: 2;
+  padding: 0 20px;
 
     .contact_details {
       color: var(--white);
       padding: 20px 0;
+      font-size: 16px;
+      line-height: 20px;
     }
 
     .phone {
@@ -24,15 +30,33 @@
     }
 }
 
-.top_bar_container {
-  width: 100%;
-  max-width: 1240px;
-  margin: 0 auto;
+.menu_bar {
+  display: grid;
+  grid-template-columns: auto minmax(320px, 960px) auto;
+  gap: 20px;
+}
+
+.menu_bar_container {
+  grid-column: 2;
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 10px;
-  justify-items: end;
-  outline: 1px solid blue;
-  text-align: center;
   background-color: #fff;
+  padding: 0 20px;
+
+  .logo {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 60px;
+    text-transform: uppercase;
+    padding: 15px;
+  }
+
+  .menu_wrapper {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 60px;
+    text-transform: uppercase;
+    padding: 15px;
+  }
 }

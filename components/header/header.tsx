@@ -1,5 +1,6 @@
 import cn from 'classnames';
 import styles from './header.module.scss';
+import Link from 'next/link';
 
 export const Header = ({ className }: any): JSX.Element => {
   return (
@@ -16,9 +17,11 @@ export const Header = ({ className }: any): JSX.Element => {
           </ul>
         </div>
       </div>
-      <div className={styles.top_bar}>
-        <div className={styles.top_bar_container}>
-          <div className={styles.logo}>logo</div>
+      <div className={styles.menu_bar}>
+        <div className={styles.menu_bar_container}>
+          <div className={styles.logo}>
+            <Link href="/">logo1</Link>
+          </div>
           <div className={styles.menu_wrapper}>menu</div>
         </div>
       </div>
