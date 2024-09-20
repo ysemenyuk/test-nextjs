@@ -9,26 +9,18 @@
 
   display: grid;
   grid-template-rows: auto 1fr auto;
-  // grid-template-columns: 100%;
-  // grid-template-areas:
-  //   ". header ."
-  //   ". main ."
-  //   ". footer .";
 }
 
 .header {
-  // grid-area: header;
   outline: 1px solid black;
 }
 
 .main {
-  // grid-area: main;
   margin-top: -150px;
   outline: 1px solid black;
 }
 
 .footer {
-  // grid-area: footer;
   outline: 1px solid black;
 }
 

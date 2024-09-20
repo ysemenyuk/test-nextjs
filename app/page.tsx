@@ -1,6 +1,5 @@
 import styles from './page.module.scss';
 import Link from 'next/link';
-
 import { PageSection } from '@/components/Section/Section';
 import { PageTitle } from '@/components/PageTitle/PageTitle';
 
