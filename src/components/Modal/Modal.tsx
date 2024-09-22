@@ -1,5 +1,6 @@
 'use client';
 
+import { CSSTransition } from 'react-transition-group';
 import { useRef } from 'react';
 import styles from './Modal.module.css';
 import cn from 'classnames';
@@ -44,12 +45,25 @@ const Modal: FC<IModalProps> = ({ children, onClose, title, isOpen }) => {
   }, []);
 
   return ReactDOM.createPortal(
-    <div onClick={clickOnOverlay} className={styles.overlay}>
-      <div className={cn(styles.modal)} ref={nodeRef}>
-        <span className={styles.title}>{title}</span>
-        {children}
+    <CSSTransition
+      nodeRef={nodeRef}
+      in={isOpen}
+      timeout={200}
+      unmountOnExit
+      classNames={{
+        enter: styles.enter,
+        enterActive: styles.enterActive,
+        exit: styles.exit,
+        exitActive: styles.exitActive,
+      }}
+    >
+      <div ref={nodeRef} onClick={clickOnOverlay} className={styles.overlay}>
+        <div className={cn(styles.modal)} ref={nodeRef}>
+          <span className={styles.title}>{title}</span>
+          {children}
+        </div>
       </div>
-    </div>,
+    </CSSTransition>,
     modalRoot
   );
 };
