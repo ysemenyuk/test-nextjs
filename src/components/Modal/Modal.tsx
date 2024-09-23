@@ -3,20 +3,25 @@
 import { CSSTransition } from 'react-transition-group';
 import { useRef } from 'react';
 import styles from './Modal.module.css';
-import cn from 'classnames';
-import { FC, MouseEvent, useEffect } from 'react';
+import { RefObject, FC, MouseEvent, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
 interface IModalProps {
+  children: React.ReactNode;
+  title: string;
+  nodeRef: RefObject<HTMLInputElement>;
+  onClose: () => void;
+}
+
+interface IModalWProps {
   children: React.ReactNode;
   title: string;
   onClose: () => void;
   isOpen: boolean;
 }
 
-const Modal: FC<IModalProps> = ({ children, onClose, title, isOpen }) => {
+const Modal: FC<IModalProps> = ({ children, onClose, title, nodeRef }) => {
   const modalRoot = document.body as HTMLElement;
-  const nodeRef = useRef(null);
 
   const clickOnOverlay = (e: MouseEvent) => {
     if (e.target === e.currentTarget) onClose();
@@ -45,6 +50,20 @@ const Modal: FC<IModalProps> = ({ children, onClose, title, isOpen }) => {
   }, []);
 
   return ReactDOM.createPortal(
+    <div ref={nodeRef} onClick={clickOnOverlay} className={styles.overlay}>
+      <div className={styles.modal}>
+        <div className={styles.title}>{title}</div>
+        {children}
+      </div>
+    </div>,
+    modalRoot
+  );
+};
+
+const ModalWrapper: FC<IModalWProps> = ({ isOpen, ...props }) => {
+  const nodeRef = useRef<HTMLInputElement>(null);
+
+  return (
     <CSSTransition
       nodeRef={nodeRef}
       in={isOpen}
@@ -57,23 +76,9 @@ const Modal: FC<IModalProps> = ({ children, onClose, title, isOpen }) => {
         exitActive: styles.exitActive,
       }}
     >
-      <div ref={nodeRef} onClick={clickOnOverlay} className={styles.overlay}>
-        <div className={cn(styles.modal)} ref={nodeRef}>
-          <span className={styles.title}>{title}</span>
-          {children}
-        </div>
-      </div>
-    </CSSTransition>,
-    modalRoot
+      <Modal {...props} nodeRef={nodeRef} />
+    </CSSTransition>
   );
-};
-
-const ModalWrapper: FC<IModalProps> = ({ isOpen, ...props }) => {
-  if (!isOpen) {
-    return <></>;
-  }
-
-  return <Modal isOpen {...props} />;
 };
 
 export default ModalWrapper;

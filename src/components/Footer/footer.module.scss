@@ -1,6 +1,6 @@
 .footer {
-    background-color: var(--gray-400);
-    color: var(--gray-200)
+    background-color: #545454;
+    color: #cccccc;
 }
 
 .action {
@@ -8,13 +8,13 @@
     padding: 20px 0;
     color: var(--white);
     background: rgba(0, 0, 0, .1);
-    border-top: var(--gray-200);
+    border-top: 1px solid hsla(0, 0%, 100%, .1);
     font-size: 18px;
     line-height: 22px;
   }
 
   .widgets {
-    border-top: var(--gray-200);
+    border-top: 1px solid hsla(0, 0%, 100%, .1);
     font-size: 16px;
     line-height: 18px;
     padding: 20px 0;
@@ -33,7 +33,7 @@
   }
 
   .copyrigts {
-    border-top: var(--gray-200);
+    border-top: 1px solid hsla(0, 0%, 100%, .1);
     font-size: 14px;
     line-height: 16px;
     padding: 20px 0;

@@ -8,9 +8,6 @@ import useModal from '@/src/hooks/useModal';
 import Modal from '@/src/components/Modal/Modal';
 import { FlexBox } from '@/src/components/UI/FlexBox/FlexBox';
 import { Button } from '@/src/components/UI/Button/Button';
-import { useRef, useState } from 'react';
-import { CSSTransition } from 'react-transition-group';
-import './styles.css';
 
 const pageTitle = {
   h1Top: 'проектирование, монтаж, обслуживание',
@@ -23,9 +20,6 @@ const pageTitle = {
 export default function Page() {
   const [isOpen, { open, close }] = useModal(false);
 
-  const [showMessage, setShowMessage] = useState(false);
-  const nodeRef = useRef(null);
-
   return (
     <>
       <PageSection className={styles.headSection}>
@@ -37,22 +31,6 @@ export default function Page() {
 
       <PageSection>
         <Link href="/">main page</Link>
-        <Button onClick={() => setShowMessage(true)}>Show Message</Button>
-        <CSSTransition
-          in={showMessage}
-          nodeRef={nodeRef}
-          timeout={300}
-          classNames="alert"
-          unmountOnExit
-        >
-          <div ref={nodeRef}>
-            <div>Animated alert message</div>
-            <p>
-              This alert message is being transitioned in and out of the DOM.
-            </p>
-            <Button onClick={() => setShowMessage(false)}>Close</Button>
-          </div>
-        </CSSTransition>
       </PageSection>
 
       <PageSection>

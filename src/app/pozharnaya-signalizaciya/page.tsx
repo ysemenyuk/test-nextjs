@@ -4,10 +4,11 @@ import Link from 'next/link';
 import styles from './page.module.scss';
 import { PageSection } from '@/src/components/Section/Section';
 import { PageTitle } from '@/src/components/PageTitle/PageTitle';
-import { Dialog } from 'primereact/dialog';
-import { Button } from 'primereact/button';
-import useModal from '@/src/hooks/useModal';
+// import { Dialog } from 'primereact/dialog';
+// import { Button } from 'primereact/button';
+// import useModal from '@/src/hooks/useModal';
 import { FlexBox } from '@/src/components/UI/FlexBox/FlexBox';
+import { Button } from '@/src/components/UI/Button/Button';
 
 const pageTitle = {
   h1Top: 'проектирование, монтаж, обслуживание',
@@ -18,14 +19,14 @@ const pageTitle = {
 };
 
 export default function Page() {
-  const [isOpen, { open, close }] = useModal(false);
+  // const [isOpen, { open, close }] = useModal(false);
 
   return (
     <>
       <PageSection className={styles.headSection}>
         <PageTitle className={styles.pageTitle} {...pageTitle} />
         <FlexBox className={styles.btnTitleFlexBox}>
-          <Button onClick={open}>ОТПРАВИТЬ ЗАЯВКУ</Button>
+          <Button>ОСТАВИТЬ ЗАЯВКУ</Button>
         </FlexBox>
       </PageSection>
 
@@ -40,19 +41,6 @@ export default function Page() {
       <PageSection>
         <Link href="/pozharnaya-signalizaciya">/pozharnaya-signalizaciya</Link>
       </PageSection>
-
-      <Dialog
-        header="Header"
-        visible={isOpen}
-        style={{ width: '50vw' }}
-        onHide={close}
-        blockScroll
-        dismissableMask
-      >
-        <h2>Hello</h2>
-        <div>I am a modal</div>
-        <button onClick={close}>close</button>
-      </Dialog>
     </>
   );
 }
