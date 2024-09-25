@@ -1,26 +1,44 @@
 'use client';
 
-import { CSSTransition } from 'react-transition-group';
 import { useRef } from 'react';
 import styles from './Modal.module.css';
 import { RefObject, FC, MouseEvent, useEffect } from 'react';
 import ReactDOM from 'react-dom';
+import { AnimatePresence, motion } from 'framer-motion';
+
+const dropIn = {
+  hidden: {
+    y: '-100vh',
+    opacity: 0,
+  },
+  visible: {
+    y: '0',
+    opacity: 1,
+    transition: {
+      duration: 0.1,
+      type: 'spring',
+      damping: 25,
+      stiffness: 500,
+    },
+  },
+  exit: {
+    y: '100vh',
+    opacity: 0,
+  },
+};
 
 interface IModalProps {
   children: React.ReactNode;
-  title: string;
-  nodeRef: RefObject<HTMLInputElement>;
   onClose: () => void;
 }
 
 interface IModalWProps {
   children: React.ReactNode;
-  title: string;
   onClose: () => void;
   isOpen: boolean;
 }
 
-const Modal: FC<IModalProps> = ({ children, onClose, nodeRef }) => {
+const Modal: FC<IModalProps> = ({ children, onClose }) => {
   const modalRoot = document.body as HTMLElement;
 
   const clickOnOverlay = (e: MouseEvent) => {
@@ -50,31 +68,33 @@ const Modal: FC<IModalProps> = ({ children, onClose, nodeRef }) => {
   }, []);
 
   return ReactDOM.createPortal(
-    <div ref={nodeRef} onClick={clickOnOverlay} className={styles.overlay}>
-      <div className={styles.modal}>{children}</div>
-    </div>,
+    <motion.div
+      // ref={nodeRef}
+      onClick={clickOnOverlay}
+      className={styles.overlay}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <motion.div
+        className={styles.modal}
+        variants={dropIn}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+      >
+        {children}
+      </motion.div>
+    </motion.div>,
     modalRoot
   );
 };
 
 const ModalWrapper: FC<IModalWProps> = ({ isOpen, ...props }) => {
-  const nodeRef = useRef<HTMLInputElement>(null);
-
   return (
-    <CSSTransition
-      nodeRef={nodeRef}
-      in={isOpen}
-      timeout={200}
-      unmountOnExit
-      classNames={{
-        enter: styles.enter,
-        enterActive: styles.enterActive,
-        exit: styles.exit,
-        exitActive: styles.exitActive,
-      }}
-    >
-      <Modal {...props} nodeRef={nodeRef} />
-    </CSSTransition>
+    <AnimatePresence initial={false}>
+      {isOpen && <Modal {...props} />}
+    </AnimatePresence>
   );
 };
 

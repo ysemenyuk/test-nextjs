@@ -8,8 +8,8 @@ import { Cuprum } from 'next/font/google';
 // import 'primereact/resources/themes/fluent-light/theme.css';
 // import 'primereact/resources/themes/lara-light-cyan/theme.css';
 
-// import '../../themes/fluent/theme.scss';
-// import '../../themes/orion/theme.scss';
+// import '../themes/fluent/theme.scss';
+// import '../themes/orion/theme.scss';
 import './globals.css';
 
 import { Footer } from '@/src/components/Footer/Footer';

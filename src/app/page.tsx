@@ -7,7 +7,7 @@ import { PageSection } from '@/src/components/Section/Section';
 import { PageTitle } from '@/src/components/PageTitle/PageTitle';
 import { FlexBox } from '../components/UI/FlexBox/FlexBox';
 import { Button } from '../components/UI/Button/Button';
-import Modal from '../components/Modal/Modal';
+import Modal from '../components/ModalFramer/Modal';
 
 const data = {
   h1Top: '',
@@ -41,7 +41,7 @@ export default function Home() {
         <Link href="/pozharnaya-signalizaciya">/pozharnaya-signalizaciya</Link>
       </PageSection>
 
-      <Modal isOpen={isOpen} onClose={close} title={`title`}>
+      <Modal isOpen={isOpen} onClose={close}>
         <h2>Hello</h2>
         <div>I am a modal</div>
         <button onClick={close}>close</button>
