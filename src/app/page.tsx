@@ -8,6 +8,7 @@ import { PageTitle } from '@/src/components/PageTitle/PageTitle';
 import { FlexBox } from '../components/UI/FlexBox/FlexBox';
 import { Button } from '../components/UI/Button/Button';
 import Modal from '../components/ModalFramer/Modal';
+import { send } from '@/src/app/actions';
 
 const data = {
   h1Top: '',
@@ -19,6 +20,11 @@ const data = {
 
 export default function Home() {
   const [isOpen, { open, close }] = useModal(false);
+
+  const sendMessage = async () => {
+    await send({ name: 'name', phone: '1234' });
+    close();
+  };
 
   return (
     <>
@@ -44,6 +50,7 @@ export default function Home() {
       <Modal isOpen={isOpen} onClose={close}>
         <h2>Hello</h2>
         <div>I am a modal</div>
+        <button onClick={sendMessage}>sendMessage</button>
         <button onClick={close}>close</button>
       </Modal>
     </>
