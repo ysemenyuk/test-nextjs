@@ -4,61 +4,120 @@
 
 .action_bar {
   display: grid;
-  grid-template-columns: auto minmax(320px, 960px) auto;
+  grid-template-columns: auto minmax(320px, 1180px) auto;
   gap: 20px;
 }
 
 .action_bar_container {
   grid-column: 2;
-  padding: 0 20px;
+  padding: 16px 20px;
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
 
-    .contact_details {
-      color: var(--white);
-      padding: 20px 0;
-      font-size: 16px;
-      line-height: 16px;
+    .left {
       display: flex;
-      gap: 15px;
+      align-items: center;
+
+      color: #FFF;
+      font-size: 14px;
+      line-height: 24px;
+
+      min-width: 214px;
     }
 
-    .phone {
+    .rigt {
       display: flex;
-      gap: 5px;
-    }
-
-    .mail {
-      display: flex;
-      gap: 5px;
-    }
+      align-items: center;
+      gap: 18px;
+    }  
 }
+
+.contacts {
+  color: var(--white);
+  font-size: 14px;
+  line-height: 24px;
+  display: flex;
+  gap: 18px;
+
+  .contacts_item {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  
+  .contacts_item_icon {
+    height: 18px;
+    width: 18px;
+    color: rgb(255 255 255 / 50%);
+  }
+
+  .phone {
+    min-width: 122px;
+  }
+}
+
+
+
+.messagers {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .messagers_item {
+    display: flex;
+    align-items: center;
+  }
+}
+
+
 
 .menu_bar {
   display: grid;
-  grid-template-columns: auto minmax(320px, 960px) auto;
+  grid-template-columns: auto minmax(320px, 1180px) auto;
   gap: 20px;
 }
 
 .menu_bar_container {
   grid-column: 2;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 10px;
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
   background-color: #fff;
-  padding: 0 20px;
+  padding: 14px 20px;
+
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.80);
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.05);
 
   .logo {
     font-size: 16px;
     font-weight: 400;
-    line-height: 60px;
+    line-height: 52px;
     text-transform: uppercase;
-    padding: 15px;
   }
 
-  .menu_wrapper {
+  .menu_container {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu {
+    display: flex;
+    padding: 10px 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    border-radius: 50px;
+    background: rgba(194, 194, 194, 0.10);
+  }
+
+  .menu_item {
     font-size: 16px;
-    font-weight: 400;
-    line-height: 60px;
-    text-transform: uppercase;
-    padding: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 4px;
   }
 }

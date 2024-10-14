@@ -4,7 +4,7 @@ import styles from './page.module.scss';
 import Link from 'next/link';
 import useModal from '@/src/hooks/useModal';
 import { PageSection } from '@/src/components/Section/Section';
-import { PageTitle } from '@/src/components/PageTitle/PageTitle';
+import { PageHeading } from '@/src/components/PageHeading/PageHeading';
 import { FlexBox } from '../components/UI/FlexBox/FlexBox';
 import { Button } from '../components/UI/Button/Button';
 import Modal from '../components/ModalFramer/Modal';
@@ -29,9 +29,11 @@ export default function Home() {
   return (
     <>
       <PageSection className={styles.headSection}>
-        <PageTitle className={styles.pageTitle} {...data} />
+        <PageHeading className={styles.pageTitle} {...data} />
         <FlexBox className={styles.btnTitleFlexBox}>
-          <Button onClick={open}>ОСТАВИТЬ ЗАЯВКУ</Button>
+          <Button onClick={open} rounded>
+            Оставить заявку
+          </Button>
         </FlexBox>
       </PageSection>
 

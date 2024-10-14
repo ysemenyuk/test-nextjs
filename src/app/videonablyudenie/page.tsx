@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import styles from './page.module.scss';
 import { PageSection } from '@/src/components/Section/Section';
-import { PageTitle } from '@/src/components/PageTitle/PageTitle';
+import { PageHeading } from '@/src/components/PageHeading/PageHeading';
 import useModal from '@/src/hooks/useModal';
 import Modal from '@/src/components/ModalFramer/Modal';
 import { FlexBox } from '@/src/components/UI/FlexBox/FlexBox';
@@ -16,7 +16,7 @@ export default function Page() {
   return (
     <>
       <PageSection key={'head'} className={styles.headSection}>
-        <PageTitle className={styles.pageTitle} {...pageTitle} />
+        <PageHeading className={styles.pageTitle} {...pageTitle} />
         <FlexBox className={styles.btnTitleFlexBox}>
           <Button onClick={open}>ОТПРАВИТЬ ЗАЯВКУ</Button>
         </FlexBox>
