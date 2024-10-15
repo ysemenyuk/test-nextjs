@@ -1,28 +1,13 @@
-import { HiOutlinePhone, HiOutlineMail } from 'react-icons/hi';
+import bgImage from '@/public/images/video-bg.webp';
 
-export const pageTitle = {
-  h1Top: 'проектирование, монтаж, обслуживание',
-  h1Title: 'СИСТЕМ ВИДЕОНАБЛЮДЕНИЯ',
-  h1Buttom: 'в Москве и Московской области',
-  descLine1: 'Бесплатный осмотр объекта и расчет стоимости.',
-  descLine2: 'Современное оборудование, объекты любой сложности.',
+export const hero = {
+  bgImage: bgImage,
+  altImage: 'Видеонаблюдение.',
+  sup: 'Проектирование, Монтаж, Обслуживание',
+  heading: 'ВИДЕОНАБЛЮДЕНИЕ',
+  sub: 'в Москве и Московской области',
+  text_1: 'От профессионалов c 12 летним опытом.',
+  text_2: 'На объектах любого размера и назначения.',
+  text_3: 'Бесплатный осмотр и расчет стоимости.',
+  btnText: 'Оставить заявку',
 };
-
-export const uslugi: { icon: JSX.Element; text: string }[] = [
-  {
-    icon: <HiOutlinePhone />,
-    text: 'Обследование объекта Проектные работы',
-  },
-  {
-    icon: <HiOutlinePhone />,
-    text: `Монтаж оборудования Пусконаладочные работы`,
-  },
-  {
-    icon: <HiOutlinePhone />,
-    text: `Модернизация или ремонт существующей системы`,
-  },
-  {
-    icon: <HiOutlinePhone />,
-    text: `Регулярное техническое обслуживание`,
-  },
-];

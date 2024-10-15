@@ -3,20 +3,12 @@
 import styles from './page.module.scss';
 import Link from 'next/link';
 import useModal from '@/src/hooks/useModal';
-import { PageSection } from '@/src/components/Section/Section';
-import { PageHeading } from '@/src/components/PageHeading/PageHeading';
-import { FlexBox } from '../components/UI/FlexBox/FlexBox';
-import { Button } from '../components/UI/Button/Button';
-import Modal from '../components/ModalFramer/Modal';
+// import { Button } from '../components/UI/Button/Button';
+import Modal from '@/src/components/ModalFramer/Modal';
 import { send } from '@/src/app/actions';
-
-const data = {
-  h1Top: '',
-  h1Title: 'КОМПЛЕКСНАЯ БЕЗОПАСНОСТЬ',
-  h1Buttom: 'в Москве и Московской области',
-  descLine1: 'Установка и обслуживание охранных и пожарных систем.',
-  descLine2: 'Услуги в области пожарной безопасности.',
-};
+import { Hero } from '@/src/components/Sections/Hero/Hero';
+import { Uslugi } from '@/src/components/Sections/Uslugi/Uslugi';
+import { hero, uslugi } from './data';
 
 export default function Home() {
   const [isOpen, { open, close }] = useModal(false);
@@ -28,26 +20,31 @@ export default function Home() {
 
   return (
     <>
-      <PageSection className={styles.headSection}>
-        <PageHeading className={styles.pageTitle} {...data} />
-        <FlexBox className={styles.btnTitleFlexBox}>
-          <Button onClick={open} rounded>
-            Оставить заявку
-          </Button>
-        </FlexBox>
-      </PageSection>
+      <Hero data={hero} />
 
-      <PageSection>
-        <Link href="/">main page</Link>
-      </PageSection>
+      <Uslugi data={uslugi} />
 
-      <PageSection>
-        <Link href="/videonablyudenie">/videonabludenie</Link>
-      </PageSection>
-
-      <PageSection>
-        <Link href="/pozharnaya-signalizaciya">/pozharnaya-signalizaciya</Link>
-      </PageSection>
+      <div
+        style={{
+          height: '200px',
+          display: 'flex',
+          flexDirection: 'column',
+          width: '300px',
+          margin: '0 auto',
+        }}
+      >
+        <div>
+          <Link href="/">main page</Link>
+        </div>
+        <div>
+          <Link href="/videonablyudenie">/videonabludenie</Link>
+        </div>
+        <div>
+          <Link href="/pozharnaya-signalizaciya">
+            /pozharnaya-signalizaciya
+          </Link>
+        </div>
+      </div>
 
       <Modal isOpen={isOpen} onClose={close}>
         <h2>Hello</h2>

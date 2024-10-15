@@ -1,16 +1,18 @@
 import cn from 'classnames';
 import styles from './header.module.scss';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   HiOutlinePhone,
   HiOutlinePhoneIncoming,
   HiOutlineMail,
 } from 'react-icons/hi';
-import TelegramIcon from '../../../public/icons/icon_telegram.svg';
-import WhatsappIcon from '../../../public/icons/icon_whatsapp.svg';
-import VkIcon from '../../../public/icons/icon_vk.svg';
-import LinkIcon from '../../../public/icons/icon_external_link.svg';
-import ArrowDownIcon from '../../../public/icons/icon_arrow_down.svg';
+import TelegramIcon from '@/public/icons/icon_telegram.svg';
+import WhatsappIcon from '@/public/icons/icon_whatsapp.svg';
+import VkIcon from '@/public/icons/icon_vk.svg';
+import LinkIcon from '@/public/icons/icon_external_link.svg';
+import ArrowDownIcon from '@/public/icons/icon_arrow_down.svg';
+import OrionLogo from '@/public/images/orion-logo.webp';
 
 export const Header = ({ className }: any): JSX.Element => {
   return (
@@ -54,8 +56,10 @@ export const Header = ({ className }: any): JSX.Element => {
 
       <div className={styles.menu_bar}>
         <div className={styles.menu_bar_container}>
-          <div className={styles.logo}>
-            <Link href="/">logo1</Link>
+          <div className={styles.logo_container}>
+            <Link className={styles.logo} href="/">
+              <Image alt="Logo" height={50} src={OrionLogo} quality={100} />
+            </Link>
           </div>
 
           <div className={styles.menu_container}>

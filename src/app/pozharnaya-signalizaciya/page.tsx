@@ -1,20 +1,36 @@
 import Link from 'next/link';
 import styles from './page.module.scss';
-import { PageSection } from '@/src/components/Section/Section';
-import { PageHeading } from '@/src/components/PageHeading/PageHeading';
-import { FlexBox } from '@/src/components/UI/FlexBox/FlexBox';
-import { Button } from '@/src/components/UI/Button/Button';
-import { pageHeading } from './data';
+// import { Button } from '@/src/components/UI/Button/Button';
+import { Hero } from '@/src/components/Sections/Hero/Hero';
+
+import { hero } from './data';
 
 export default function Page() {
   return (
     <>
-      <PageSection className={styles.headSection}>
-        <PageHeading className={styles.pageTitle} data={pageHeading} />
-        <FlexBox className={styles.btnTitleFlexBox}>
-          <Button>ОСТАВИТЬ ЗАЯВКУ</Button>
-        </FlexBox>
-      </PageSection>
+      <Hero data={hero} />
+
+      <div
+        style={{
+          height: '200px',
+          display: 'flex',
+          flexDirection: 'column',
+          width: '1180px',
+          margin: '0 auto',
+        }}
+      >
+        <div>
+          <Link href="/">main page</Link>
+        </div>
+        <div>
+          <Link href="/videonablyudenie">/videonabludenie</Link>
+        </div>
+        <div>
+          <Link href="/pozharnaya-signalizaciya">
+            /pozharnaya-signalizaciya
+          </Link>
+        </div>
+      </div>
     </>
   );
 }
