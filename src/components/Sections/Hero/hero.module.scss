@@ -1,13 +1,10 @@
-.section_bg {
-  position: relative;
-
-  outline: 1px solid red;
-}
-
 .section {
   display: grid;
-  grid-template-columns: auto minmax(320px, 1180px) auto;
-  gap: 20px;
+  grid-template-columns: auto minmax(960px, 1180px) auto;
+  gap: 40px;
+  padding: 50px 0;
+
+  position: relative;
 
   outline: 1px solid rgb(255, 0, 0);
 }
@@ -16,7 +13,7 @@
     grid-column: 2;
     padding: 0 20px;
     display: grid;
-    margin-top: 150px;
+    margin-top: 100px;
 
     outline: 1px solid green;
 }
@@ -38,7 +35,6 @@
   display: grid;
   color: #fff;
   text-align: center;
-  margin-bottom: 60px;
 
   .heading {
     display: grid;

@@ -1,0 +1,10 @@
+.section {
+    display: grid;
+    grid-template-columns: auto minmax(960px, 1180px) auto;
+    gap: 40px;
+    padding: 60px 0;
+
+    position: relative;
+
+    outline: 1px solid rgb(255, 0, 0);
+  }

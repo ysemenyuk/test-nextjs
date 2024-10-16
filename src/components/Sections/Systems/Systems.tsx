@@ -1,11 +1,14 @@
 import cn from 'classnames';
-import styles from './uslugi.module.scss';
+import styles from './systems.module.scss';
+import Image from 'next/image';
 import { Heading } from '../../UI/Heading/Heading';
 import { SectionWrapper } from '../../SectionWrapper/SectionWrapper';
 
 const Item = ({ item }: any): JSX.Element => (
   <div key={item.id} className={cn(styles.item)}>
-    <div className={cn(styles.icon_wrapper)}>{item.icon}</div>
+    <div className={cn(styles.image_wrapper)}>
+      <Image height={180} alt={item.text_1} src={item.image} />
+    </div>
     <div className={cn(styles.text_wrapper)}>
       <p>{item.text_1}</p>
       <p>{item.text_2}</p>
@@ -13,7 +16,7 @@ const Item = ({ item }: any): JSX.Element => (
   </div>
 );
 
-export const Uslugi = ({ data, className }: any): JSX.Element => {
+export const Systems = ({ data, classNames }: any): JSX.Element => {
   const items = data.items.map((item: any) => (
     <Item item={item} key={item.id} />
   ));

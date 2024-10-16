@@ -10,8 +10,8 @@
     padding: 0 20px;
 
     display: grid;
-    grid-template-columns: repeat(4, minmax(220px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, minmax(260px, 1fr));
+    gap: 60px;
 
     outline: 1px solid green;
 }
@@ -28,6 +28,10 @@
     .text_wrapper {
         font-size: 1rem;
         line-height: normal;
+
+        .heading {
+            font-weight: 700;
+        }
 
         p {
             margin: 0;

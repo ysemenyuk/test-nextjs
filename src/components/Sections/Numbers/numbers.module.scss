@@ -1,16 +1,10 @@
-.section {
-  padding: 50px 0;
+.items_container {
+  grid-column: 2;
+  padding: 0 20px;
+
   display: grid;
-  grid-template-columns: auto minmax(320px, 1180px) auto;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
   gap: 20px;
 
-  outline: 1px solid rgb(255, 0, 0);
-}
-
-.container {
-    grid-column: 2;
-    padding: 0 20px;
-
-    outline: 1px solid green;
-    
+  outline: 1px solid green;
 }

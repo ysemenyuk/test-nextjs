@@ -3,12 +3,16 @@
 import styles from './page.module.scss';
 import Link from 'next/link';
 import useModal from '@/src/hooks/useModal';
-// import { Button } from '../components/UI/Button/Button';
+import { Button } from '@/src/components/UI/Button/Button';
 import Modal from '@/src/components/ModalFramer/Modal';
 import { send } from '@/src/app/actions';
+import * as pageData from './data';
 import { Hero } from '@/src/components/Sections/Hero/Hero';
 import { Uslugi } from '@/src/components/Sections/Uslugi/Uslugi';
-import { hero, uslugi } from './data';
+import { Systems } from '@/src/components/Sections/Systems/Systems';
+import { Numbers } from '@/src/components/Sections/Numbers/Numbers';
+import { Objects } from '../components/Sections/Objects/Objects';
+import { WhyUs } from '../components/Sections/WhyUs/WhyUs';
 
 export default function Home() {
   const [isOpen, { open, close }] = useModal(false);
@@ -20,9 +24,19 @@ export default function Home() {
 
   return (
     <>
-      <Hero data={hero} />
+      <Hero data={pageData.hero} />
 
-      <Uslugi data={uslugi} />
+      <Numbers data={pageData.numbers} />
+
+      <Uslugi data={pageData.uslugi} />
+
+      <Systems data={pageData.ohrannyeSistemy} />
+
+      <Systems data={pageData.pozharnyeSistemy} />
+
+      <Objects data={pageData.objects} />
+
+      <WhyUs data={pageData.whyUs} />
 
       <div
         style={{
@@ -44,8 +58,11 @@ export default function Home() {
             /pozharnaya-signalizaciya
           </Link>
         </div>
-      </div>
 
+        <Button primary onClick={open}>
+          OpenModal
+        </Button>
+      </div>
       <Modal isOpen={isOpen} onClose={close}>
         <h2>Hello</h2>
         <div>I am a modal</div>
