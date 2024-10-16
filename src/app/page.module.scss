@@ -1,0 +1,19 @@
+.container_3col {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(260px, 1fr));
+    gap: 40px;
+
+    outline: 1px solid red;
+}
+
+.container_4col {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(220px, 1fr));
+    gap: 20px;
+  
+    outline: 1px solid red
+  }
+
+  .bgGrey {
+    background-color: gray;
+  }

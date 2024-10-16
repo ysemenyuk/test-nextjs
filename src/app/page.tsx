@@ -6,13 +6,19 @@ import useModal from '@/src/hooks/useModal';
 import { Button } from '@/src/components/UI/Button/Button';
 import Modal from '@/src/components/ModalFramer/Modal';
 import { send } from '@/src/app/actions';
-import * as pageData from './data';
+import * as data from './data';
 import { Hero } from '@/src/components/Sections/Hero/Hero';
 import { Uslugi } from '@/src/components/Sections/Uslugi/Uslugi';
 import { Systems } from '@/src/components/Sections/Systems/Systems';
 import { Numbers } from '@/src/components/Sections/Numbers/Numbers';
-import { Objects } from '../components/Sections/Objects/Objects';
-import { WhyUs } from '../components/Sections/WhyUs/WhyUs';
+import { Objects } from '@/src/components/Sections/Objects/Objects';
+import { WhyUs } from '@/src/components/Sections/WhyUs/WhyUs';
+import { Section } from '@/src/components/Section/Section';
+import { Heading } from '@/src/components/UI/Heading/Heading';
+import { MyAlert } from '../components/Sections/MyAlert/MyAlert';
+import { Aps } from '../components/Sections/Aps/Aps';
+import { Soue } from '../components/Sections/Soue/Soue';
+import { MyAccordion } from '../components/Sections/MyAccordion/MyAccordion';
 
 export default function Home() {
   const [isOpen, { open, close }] = useModal(false);
@@ -22,29 +28,38 @@ export default function Home() {
     close();
   };
 
+  const sections: any[] = [
+    { id: 1, Content: Numbers, data: data.numbers },
+    { id: 2, Content: MyAlert, data: data.alert },
+    { id: 3, Content: Uslugi, data: data.uslugi },
+    { id: 4, Content: Aps, data: data.aps },
+    { id: 5, Content: Soue, data: data.soue },
+    { id: 5, Content: MyAccordion, data: data.faq },
+
+    // { id: 3, Content: Systems, data: data.ohrannyeSistemy },
+    // { id: 4, Content: Systems, data: data.pozharnyeSistemy },
+    // { id: 5, Content: Objects, data: data.objects },
+    // { id: 6, Content: WhyUs, data: data.whyUs },
+  ];
+
   return (
     <>
-      <Hero data={pageData.hero} />
+      <Hero data={data.hero} />
 
-      <Numbers data={pageData.numbers} />
-
-      <Uslugi data={pageData.uslugi} />
-
-      <Systems data={pageData.ohrannyeSistemy} />
-
-      <Systems data={pageData.pozharnyeSistemy} />
-
-      <Objects data={pageData.objects} />
-
-      <WhyUs data={pageData.whyUs} />
+      {sections.map(({ id, Content, data, cn }) => (
+        <Section key={id} data={data.wrapper} className={cn}>
+          <Heading data={data.heading} />
+          <Content data={data.content} />
+        </Section>
+      ))}
 
       <div
         style={{
-          height: '200px',
+          height: '300px',
           display: 'flex',
           flexDirection: 'column',
           width: '300px',
-          margin: '0 auto',
+          margin: '50px auto',
         }}
       >
         <div>
@@ -63,6 +78,7 @@ export default function Home() {
           OpenModal
         </Button>
       </div>
+
       <Modal isOpen={isOpen} onClose={close}>
         <h2>Hello</h2>
         <div>I am a modal</div>

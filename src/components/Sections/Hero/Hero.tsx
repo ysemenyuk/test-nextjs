@@ -2,7 +2,6 @@ import cn from 'classnames';
 import Image from 'next/image';
 import styles from './hero.module.scss';
 import { Button } from '../../UI/Button/Button';
-import { SectionWrapper } from '../../SectionWrapper/SectionWrapper';
 
 export const Hero = ({ data, className }: any): JSX.Element => {
   return (

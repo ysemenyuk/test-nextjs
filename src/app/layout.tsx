@@ -1,6 +1,11 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+
 import './globals.css';
+import '@mantine/core/styles.css';
+
+import { MantineProvider, ColorSchemeScript } from '@mantine/core';
+import { theme } from '../theme';
 
 import { Footer } from '@/src/components/Footer/Footer';
 import { Header } from '@/src/components/Header/Header';
@@ -53,14 +58,17 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <head>
+        <ColorSchemeScript />
         <link rel="shortcut icon" href="/favicon.svg" />
       </head>
       <body className={november.className}>
-        <div className="wrapper">
-          <Header className="header" />
-          <main className="main">{children}</main>
-          <Footer className="footer" />
-        </div>
+        <MantineProvider theme={theme}>
+          <div className="wrapper">
+            <Header className="header" />
+            <main className="main">{children}</main>
+            <Footer className="footer" />
+          </div>
+        </MantineProvider>
       </body>
     </html>
   );

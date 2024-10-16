@@ -1,19 +1,9 @@
-.heading_container {
-    grid-column: 2;
-    padding: 0 20px;
-
-    outline: 1px solid green;
-}
-
-.items_container {
-    grid-column: 2;
-    padding: 0 20px;
-
+.container {
     display: grid;
     grid-template-columns: repeat(3, minmax(260px, 1fr));
     gap: 60px;
 
-    outline: 1px solid green;
+    outline: 1px solid blue;
 }
 
 .item {
@@ -31,9 +21,11 @@
 
         .heading {
             font-weight: 700;
+            margin: 0;
+            padding: 0;
         }
 
-        p {
+        .text {
             margin: 0;
             padding: 0;
         }

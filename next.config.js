@@ -27,5 +27,9 @@ module.exports = {
     return config;
   },
 
-  // ...other config
+  reactStrictMode: true,
+  swcMinify: true,
+  experimental: {
+    optimizePackageImports: ['@mantine/core', '@mantine/hooks'],
+  },
 };

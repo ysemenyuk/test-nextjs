@@ -1,7 +1,5 @@
 import cn from 'classnames';
 import styles from './numbers.module.scss';
-import Image from 'next/image';
-import { SectionWrapper } from '../../SectionWrapper/SectionWrapper';
 
 const Item = ({ item }: any): JSX.Element => (
   <div className={cn(styles.item)}>
@@ -17,14 +15,12 @@ const Item = ({ item }: any): JSX.Element => (
   </div>
 );
 
-export const Numbers = ({ data, classNames }: any): JSX.Element => {
-  const items = data.items.map((item: any) => (
-    <Item item={item} key={item.id} />
-  ));
-
+export const Numbers = ({ data, className }: any): JSX.Element => {
   return (
-    <SectionWrapper data={data.section}>
-      <div className={cn(styles.items_container)}>{items}</div>
-    </SectionWrapper>
+    <div className={cn(styles.container, className)}>
+      {data.map((item: any) => (
+        <Item item={item} key={item.id} />
+      ))}
+    </div>
   );
 };

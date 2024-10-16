@@ -2,13 +2,12 @@ import Date from '@/public/icons/Date.svg';
 import Magnifier from '@/public/icons/Magnifier.svg';
 import Reload from '@/public/icons/Reload.svg';
 import Repair from '@/public/icons/Repair.svg';
-
 import Coin from '@/public/icons/Coin.svg';
 import Like from '@/public/icons/Like.svg';
 import Rocket from '@/public/icons/Rocket.svg';
 import Secure from '@/public/icons/Secure.svg';
 
-import sistemyBezopasnosti from '@/public/images/bg/sistemy-bezopasnosti.webp';
+import heroBg from '@/public/images/bg/pozharnaya-signalizaciya.webp';
 
 import ohrannyeSistemy1 from '@/public/images/systems/ohrannye-sistemy-1.webp';
 import ohrannyeSistemy2 from '@/public/images/systems/ohrannye-sistemy-2.webp';
@@ -17,29 +16,31 @@ import ohrannyeSistemy4 from '@/public/images/systems/ohrannye-sistemy-4.webp';
 import ohrannyeSistemy5 from '@/public/images/systems/ohrannye-sistemy-5.webp';
 import ohrannyeSistemy6 from '@/public/images/systems/ohrannye-sistemy-6.webp';
 
-import object1 from '@/public/images/objects/object-1.png';
-import object2 from '@/public/images/objects/object-2.png';
-import object3 from '@/public/images/objects/object-3.png';
-import object4 from '@/public/images/objects/object-4.png';
-import object5 from '@/public/images/objects/object-5.png';
-import object6 from '@/public/images/objects/object-6.png';
+import object1 from '@/public/images/objects/object-1.webp';
+import object2 from '@/public/images/objects/object-2.webp';
+import object3 from '@/public/images/objects/object-3.webp';
+import object4 from '@/public/images/objects/object-4.webp';
+import object5 from '@/public/images/objects/object-5.webp';
+import object6 from '@/public/images/objects/object-6.webp';
+
+import apsImage from '@/public/images/aps.webp';
+import soueImage from '@/public/images/soue.webp';
 
 export const hero: any = {
-  bgImage: sistemyBezopasnosti,
-  altImage: 'Системы безопасности',
+  bgImage: heroBg,
+  altImage: 'Пожарная сигнализация',
   sup: 'Проектирование, Монтаж, Обслуживание',
-  heading: 'Системы безопасности',
+  heading: 'Пожарная сигнализация',
   sub: 'в Москве и Московской области',
   text_1: 'От профессионалов c 12 летним опытом.',
-  text_2: 'Современное оборудование, объекты любой сложности.',
+  text_2: 'На объектах любого размера и назначения.',
   text_3: 'Бесплатный осмотр объекта и расчет стоимости.',
   btnText: 'Оставить заявку',
 };
 
 export const numbers: any = {
-  heading: { sup: '', main: '', sub: '' },
-  section: { bgColor: '', bgImage: '', altBgImage: '' },
-  items: [
+  wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
+  content: [
     {
       id: 1,
       head_1: '>12',
@@ -71,10 +72,23 @@ export const numbers: any = {
   ],
 };
 
+export const alert: any = {
+  wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
+  content: {
+    variant: '',
+    color: '',
+    title: 'Это важно!',
+    icon: '',
+    text_1: `Согласно нормам РФ пожарная сигнализация должна быть установлена в каждом коммерческом помещении. Также должны проводится регулярные обслуживание и испытания системы с составлением соответсвующих актов.`,
+    text_2: `Работы по проектированию, монтажу и техническому обслуживанию пожарной сигнализации должны проводится компанией имеющей дествующую лицензию МЧС.`,
+    text_3: `За не исполение данных тербований предусмотрены штрафы как для юридических лиц так и для физических лиц,  ответственных за пожарною безопасность конкретного объекта.`,
+  },
+};
+
 export const uslugi: any = {
-  heading: { sup: '', main: 'Весь комплекс услуг', sub: '' },
-  section: { bgColor: '', bgImage: '', altBgImage: '' },
-  items: [
+  wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
+  heading: { sup: 'sup', main: 'Весь комплекс услуг', sub: 'sub' },
+  content: [
     {
       id: 1,
       icon: <Magnifier />,
@@ -102,10 +116,34 @@ export const uslugi: any = {
   ],
 };
 
+export const aps: any = {
+  wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
+  heading: { sup: '', main: 'Пожарная сигнализация (АПС)', sub: '' },
+  content: {
+    image: apsImage,
+    alt: 'Пожарная сигнализация (АПС)',
+    text_1: `Пожарная сигнализация (АПС) это комплекс технических средств, предназначение которого обнаружить возгорание, оповестить дежурный персонал и передать сигналы управления другим системам пожарной безопасности (оповещения, дымоудаления) и инженерным системам объекта (вентиляция, отопление, электроснабжение).`,
+    text_2: `Виды систем пожарной сигнализации различаются по способу подключения и принципу работы. Согласно основной классификации, на рынке представлены проводные безадресные, проводные адресные и беспроводные (радиоканальные) адресные системы.`,
+    text_3: `Все они как правило состоят из приемно-контрольного прибора (ППК) и подключенных к нему пожарных извещетелей различных типов (дымовые извещатели, тепловые извещатели, извещатели пламени).`,
+  },
+};
+
+export const soue: any = {
+  wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
+  heading: { sup: '', main: 'Система оповещения (СОУЭ)', sub: '' },
+  content: {
+    image: soueImage,
+    alt: 'Система оповещения (СОУЭ)',
+    text_1: `Как правило я вляется неотемлемой частью пожарной сигнализации. Её задача состоит в оповещении сотрудников и посетителей объекта о выявлении пожара системой АПС и управлении эвакуацией.`,
+    text_2: `Системы оповещения согласно нормам делятся на пять типов. Выбор типа устанавливаемой системы зависит от назначения объекта защиты и действующих норм пожарной безопасности.`,
+    text_3: `Системы оповещения как правило состоят из световых (табло “ВЫХОД”) и звуковых (сирены) или речевых (динамики) оповещателей, которые подключаются к прибору приемно-контрольному и модулям управления оповещением.`,
+  },
+};
+
 export const ohrannyeSistemy: any = {
+  wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
   heading: { sup: '', main: 'Охранные системы', sub: '' },
-  section: { bgColor: '', bgImage: '', altBgImage: '' },
-  items: [
+  content: [
     {
       id: 1,
       image: ohrannyeSistemy1,
@@ -146,9 +184,9 @@ export const ohrannyeSistemy: any = {
 };
 
 export const pozharnyeSistemy: any = {
+  wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
   heading: { sup: '', main: 'Пожарные системы', sub: '' },
-  section: { bgColor: '', bgImage: '', altBgImage: '' },
-  items: [
+  content: [
     {
       id: 1,
       image: ohrannyeSistemy1,
@@ -189,9 +227,9 @@ export const pozharnyeSistemy: any = {
 };
 
 export const objects: any = {
+  wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
   heading: { sup: '', main: 'На объектах любой сложности', sub: '' },
-  section: { bgColor: '', bgImage: '', altBgImage: '' },
-  items: [
+  content: [
     {
       id: 1,
       image: object1,
@@ -232,9 +270,9 @@ export const objects: any = {
 };
 
 export const whyUs: any = {
+  wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
   heading: { sup: '', main: 'Почему именно мы', sub: '' },
-  section: { bgColor: '', bgImage: '', altBgImage: '' },
-  items: [
+  content: [
     {
       id: 1,
       icon: <Magnifier />,
@@ -271,6 +309,44 @@ export const whyUs: any = {
       icon: <Secure />,
       text_1: `Гарантийное обслуживание`,
       text_2: `Гарантийное и постгарантийное обслуживание на спец. условиях.`,
+    },
+  ],
+};
+
+export const faq: any = {
+  wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
+  heading: { sup: '', main: 'Ответы на важные вопросы (FAQ)', sub: '' },
+  content: [
+    {
+      value: 'Зачем нужна установка пожарной сигнализации?',
+      description: `Согласно Федеральному закону Российской Федерации №123-ФЗ от 22.07.2008 к зданиям и сооружениям предъявляются требования по обеспечению пожарной безопасности. Качественная разработка проекта и установка системы сигнализации обеспечит безопасность прежде всего людям, а также и имуществу, находящимся на объекте.
+Собственники зданий либо лица, управляющие зданиями или занимающиеся строительством, обязаны обеспечить наличие систем безопасности при пожаре, в число которых входят системы пожарной сигнализации.
+Монтаж сигнализации должен быть осуществлен компанией, имеющей лицензию на осуществление подобного рода деятельности.`,
+    },
+    {
+      value: 'Где нужна система пожарной сигнализации?',
+      description: `Системы пожарной сигнализации необходимы для всех нежилых и коммерческих объектов. К ним относятся офисы, магазины, склады, производственные помещения, выставочные залы, учебные заведения.`,
+    },
+    {
+      value: 'Кто имеет право устанавливать пожарную сигнализацию?',
+      description: `Установка (монтаж), обслуживание и ремонт устройств по обеспечению пожарной безопасности согласно пункту 15 ч.1 ст. 12 №99-ФЗ от 4 мая 2011 года "О лицензировании отдельных видов деятельности" и другим законодательным актам подлежит лицензированию.
+Выполнять данные работы (установку, ремонт и обслуживание средств обеспечения пожарной безопасности) имеют право организации, имеющие лицензию МЧС России, а также допуски СРО.`,
+    },
+    {
+      value: 'Кто отвечает за систему пожарной сигнализации на предприятии?',
+      description: `Руководитель организации несет ответственность за наличие, исправность и соответствие законам и нормам системы пожарной сигнализации (основа - "Правила противопожарного режима в Российской Федерации").
+Согласно Федеральному закону № 69 "О пожарной безопасности", инспекция по пожарной безопасности имеет право привлекать к ответственности за нарушения:
+Владелец объекта;
+Лица, уполномоченные владеть, пользоваться и распоряжаться имуществом на объекте (включая арендаторов);
+Отвечает за обеспечение пожарной безопасности в соответствии с приказом;
+Должностные лица в пределах своей компетенции.`,
+    },
+    {
+      value:
+        'Кто обязан устанавливать и обслуживать систему пожарной сигнализации в арендуемых помещениях?',
+      description: `Условия зависят от договора аренды. За систему пожарной сигнализации может отвечать как арендатор, так и арендодатель.
+Как правило, арендодатель сдает здание с системой пожарной сигнализации, а арендатор оплачивает ежемесячное обслуживание. Если система сигнализации не установлена, обязанность по ее установке и обслуживанию указывается в договоре.
+Важно. Пожарный инспектор имеет право привлечь к ответственности как арендатора, так и арендодателя за нарушение правил пожарной безопасности.`,
     },
   ],
 };
