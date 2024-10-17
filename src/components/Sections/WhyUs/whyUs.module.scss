@@ -9,23 +9,26 @@
 .item {
     display: flex;
     flex-direction: column;
-    gap: 12px;
 
     .icon_wrapper {
         display: flex;
+        margin-bottom: 16px;
     }
 
     .text_wrapper {
         font-size: 1rem;
         line-height: normal;
 
-        .heading {
+        .title {
             font-weight: 700;
-            margin: 0;
-            padding: 0;
+            font-size: 16px;
+            font-style: normal;
+            line-height: normal;
+            text-transform: uppercase;
+            margin-bottom: 4px;
         }
-
-        .text {
+        
+        p {
             margin: 0;
             padding: 0;
         }

@@ -1,3 +1,5 @@
+'use client';
+
 import cn from 'classnames';
 import styles from './MyAccordion.module.scss';
 import { Accordion } from '@mantine/core';
@@ -12,7 +14,11 @@ export const MyAccordion = ({ data, className }: any): JSX.Element => {
 
   return (
     <div className={cn(styles.container, className)}>
-      <Accordion chevronPosition="left" defaultValue={data[0].value}>
+      <Accordion
+        // chevronPosition="left"
+        defaultValue={data[0].value}
+        classNames={styles}
+      >
         {items}
       </Accordion>
     </div>

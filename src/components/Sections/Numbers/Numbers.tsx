@@ -4,8 +4,8 @@ import styles from './numbers.module.scss';
 const Item = ({ item }: any): JSX.Element => (
   <div className={cn(styles.item)}>
     <div className={cn(styles.head)}>
-      <div>{item.head_1}</div>
-      <div>{item.head_2}</div>
+      <div className={cn(styles.head_1)}>{item.head_1}</div>
+      <div className={cn(styles.head_2)}>{item.head_2}</div>
     </div>
     <hr />
     <div className={cn(styles.text)}>

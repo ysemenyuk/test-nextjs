@@ -1,0 +1,38 @@
+.container {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 40px;
+
+  // outline: 1px solid blue;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+
+.item {
+  display: flex;
+  gap: 6px;
+}
+
+.icon {
+  display: flex;
+  margin-top: 2px;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+}
+
+.text {
+  display: grid;
+
+  p {
+    margin: 0;
+  }
+}
+

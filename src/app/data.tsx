@@ -6,15 +6,20 @@ import Coin from '@/public/icons/Coin.svg';
 import Like from '@/public/icons/Like.svg';
 import Rocket from '@/public/icons/Rocket.svg';
 import Secure from '@/public/icons/Secure.svg';
+import { IconInfoCircle } from '@tabler/icons-react';
 
 import heroBg from '@/public/images/bg/pozharnaya-signalizaciya.webp';
+import apsImage from '@/public/images/aps.webp';
+import soueImage from '@/public/images/soue.webp';
+import docsImage from '@/public/images/docs.png';
 
 import ohrannyeSistemy1 from '@/public/images/systems/ohrannye-sistemy-1.webp';
 import ohrannyeSistemy2 from '@/public/images/systems/ohrannye-sistemy-2.webp';
 import ohrannyeSistemy3 from '@/public/images/systems/ohrannye-sistemy-3.webp';
-import ohrannyeSistemy4 from '@/public/images/systems/ohrannye-sistemy-4.webp';
-import ohrannyeSistemy5 from '@/public/images/systems/ohrannye-sistemy-5.webp';
-import ohrannyeSistemy6 from '@/public/images/systems/ohrannye-sistemy-6.webp';
+
+import pozharnyeSistemy1 from '@/public/images/systems/pozharnye-sistemy-3.webp';
+import pozharnyeSistemy2 from '@/public/images/systems/pozharnye-sistemy-5.webp';
+import pozharnyeSistemy3 from '@/public/images/systems/pozharnye-sistemy-6.webp';
 
 import object1 from '@/public/images/objects/object-1.webp';
 import object2 from '@/public/images/objects/object-2.webp';
@@ -23,20 +28,41 @@ import object4 from '@/public/images/objects/object-4.webp';
 import object5 from '@/public/images/objects/object-5.webp';
 import object6 from '@/public/images/objects/object-6.webp';
 
-import apsImage from '@/public/images/aps.webp';
-import soueImage from '@/public/images/soue.webp';
+import num1 from '@/public/images/numbers/num-1.png';
+import num2 from '@/public/images/numbers/num-2.png';
+import num3 from '@/public/images/numbers/num-3.png';
+import num4 from '@/public/images/numbers/num-4.png';
+import num5 from '@/public/images/numbers/num-5.png';
+import num6 from '@/public/images/numbers/num-6.png';
+
+import brand1 from '@/public/images/brands/brand-1.png';
+import brand2 from '@/public/images/brands/brand-2.png';
+import brand3 from '@/public/images/brands/brand-3.png';
+import brand4 from '@/public/images/brands/brand-4.png';
+import brand5 from '@/public/images/brands/brand-5.png';
+import brand6 from '@/public/images/brands/brand-6.png';
+import brand7 from '@/public/images/brands/brand-7.png';
+import brand8 from '@/public/images/brands/brand-8.png';
+
+//
+// hero
+//
 
 export const hero: any = {
   bgImage: heroBg,
   altImage: 'Пожарная сигнализация',
-  sup: 'Проектирование, Монтаж, Обслуживание',
-  heading: 'Пожарная сигнализация',
-  sub: 'в Москве и Московской области',
+  heading_sup: ['Проектирование', 'Монтаж', 'Обслуживание'],
+  heading_main: 'Пожарная сигнализация',
+  heading_sub: 'в Москве и Московской области',
   text_1: 'От профессионалов c 12 летним опытом.',
   text_2: 'На объектах любого размера и назначения.',
   text_3: 'Бесплатный осмотр объекта и расчет стоимости.',
   btnText: 'Оставить заявку',
 };
+
+//
+// numbers
+//
 
 export const numbers: any = {
   wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
@@ -72,22 +98,30 @@ export const numbers: any = {
   ],
 };
 
+//
+// alert
+//
+
 export const alert: any = {
   wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
   content: {
     variant: '',
     color: '',
     title: 'Это важно!',
-    icon: '',
+    icon: <IconInfoCircle />,
     text_1: `Согласно нормам РФ пожарная сигнализация должна быть установлена в каждом коммерческом помещении. Также должны проводится регулярные обслуживание и испытания системы с составлением соответсвующих актов.`,
     text_2: `Работы по проектированию, монтажу и техническому обслуживанию пожарной сигнализации должны проводится компанией имеющей дествующую лицензию МЧС.`,
     text_3: `За не исполение данных тербований предусмотрены штрафы как для юридических лиц так и для физических лиц,  ответственных за пожарною безопасность конкретного объекта.`,
   },
 };
 
+//
+// uslugi
+//
+
 export const uslugi: any = {
   wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
-  heading: { sup: 'sup', main: 'Весь комплекс услуг', sub: 'sub' },
+  heading: { sup: '', main: 'Мы предлагаем следующие услуги', sub: '' },
   content: [
     {
       id: 1,
@@ -116,6 +150,10 @@ export const uslugi: any = {
   ],
 };
 
+//
+// aps
+//
+
 export const aps: any = {
   wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
   heading: { sup: '', main: 'Пожарная сигнализация (АПС)', sub: '' },
@@ -128,6 +166,10 @@ export const aps: any = {
   },
 };
 
+//
+// soue
+//
+
 export const soue: any = {
   wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
   heading: { sup: '', main: 'Система оповещения (СОУЭ)', sub: '' },
@@ -139,6 +181,39 @@ export const soue: any = {
     text_3: `Системы оповещения как правило состоят из световых (табло “ВЫХОД”) и звуковых (сирены) или речевых (динамики) оповещателей, которые подключаются к прибору приемно-контрольному и модулям управления оповещением.`,
   },
 };
+
+//
+// pozharnyeSistemy
+//
+
+export const pozharnyeSistemy: any = {
+  wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
+  heading: { sup: '', main: 'Другие пожарные системы', sub: '' },
+  content: [
+    {
+      id: 3,
+      image: pozharnyeSistemy1,
+      text_1: `Система противодымной вентиляции`,
+      text_2: `(дымоудаление и подпор воздуха)`,
+    },
+    {
+      id: 4,
+      image: pozharnyeSistemy2,
+      text_1: `Модульное пожаротушение`,
+      text_2: `(водяное, порошковое, газовое)`,
+    },
+    {
+      id: 6,
+      image: pozharnyeSistemy3,
+      text_1: `Взаимодействие пожарных систем`,
+      text_2: `с инженерным системами здания`,
+    },
+  ],
+};
+
+//
+// ohrannyeSistemy
+//
 
 export const ohrannyeSistemy: any = {
   wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
@@ -162,69 +237,12 @@ export const ohrannyeSistemy: any = {
       text_1: `Контроль доступа`,
       text_2: ``,
     },
-    {
-      id: 4,
-      image: ohrannyeSistemy4,
-      text_1: `Домофоны`,
-      text_2: ``,
-    },
-    {
-      id: 5,
-      image: ohrannyeSistemy5,
-      text_1: `Турникеты`,
-      text_2: ``,
-    },
-    {
-      id: 6,
-      image: ohrannyeSistemy6,
-      text_1: `Шлагбаумы`,
-      text_2: ``,
-    },
   ],
 };
 
-export const pozharnyeSistemy: any = {
-  wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
-  heading: { sup: '', main: 'Пожарные системы', sub: '' },
-  content: [
-    {
-      id: 1,
-      image: ohrannyeSistemy1,
-      text_1: `Автоматическая`,
-      text_2: 'пожарная сигнализация',
-    },
-    {
-      id: 2,
-      image: ohrannyeSistemy2,
-      text_1: `Система оповещения и управления `,
-      text_2: `эвакуацией при пожаре`,
-    },
-    {
-      id: 3,
-      image: ohrannyeSistemy3,
-      text_1: `Система противодымной вентиляции`,
-      text_2: `(дымоудаление и подпор воздуха)`,
-    },
-    {
-      id: 4,
-      image: ohrannyeSistemy4,
-      text_1: `Модульное пожаротушение`,
-      text_2: `(водяное, порошковое, газовое)`,
-    },
-    {
-      id: 5,
-      image: ohrannyeSistemy5,
-      text_1: `Противопожарный водопровод`,
-      text_2: `и насосные станции`,
-    },
-    {
-      id: 6,
-      image: ohrannyeSistemy6,
-      text_1: `Взаимодействие пожарных систем`,
-      text_2: `с инженерным системами здания`,
-    },
-  ],
-};
+//
+// objects
+//
 
 export const objects: any = {
   wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
@@ -269,6 +287,69 @@ export const objects: any = {
   ],
 };
 
+//
+// brands
+//
+
+export const brands: any = {
+  wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
+  heading: { sup: '', main: 'Используем надежное оборудование', sub: '' },
+  content: [
+    {
+      id: 1,
+      image: brand1,
+      text_1: ``,
+      text_2: ``,
+    },
+    {
+      id: 2,
+      image: brand2,
+      text_1: ``,
+      text_2: ``,
+    },
+    {
+      id: 3,
+      image: brand3,
+      text_1: ``,
+      text_2: ``,
+    },
+    {
+      id: 4,
+      image: brand4,
+      text_1: ``,
+      text_2: ``,
+    },
+    {
+      id: 5,
+      image: brand5,
+      text_1: ``,
+      text_2: ``,
+    },
+    {
+      id: 6,
+      image: brand6,
+      text_1: ``,
+      text_2: ``,
+    },
+    {
+      id: 7,
+      image: brand7,
+      text_1: ``,
+      text_2: ``,
+    },
+    {
+      id: 8,
+      image: brand8,
+      text_1: ``,
+      text_2: ``,
+    },
+  ],
+};
+
+//
+// whyUs
+//
+
 export const whyUs: any = {
   wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
   heading: { sup: '', main: 'Почему именно мы', sub: '' },
@@ -312,6 +393,107 @@ export const whyUs: any = {
     },
   ],
 };
+
+//
+// docs
+//
+
+export const docs: any = {
+  wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
+  heading: {
+    sup: '',
+    main: 'Есть все необходимые лицензии и допуски',
+    sub: '',
+  },
+  content: {
+    image: docsImage,
+    altImage: 'Лицензии и сертификаты',
+    list: [
+      {
+        id: 1,
+        icon: '',
+        text_1: `Действующая лицензия МЧС.`,
+        text_2: ``,
+      },
+      {
+        id: 2,
+        icon: '',
+        text_1: `Действующая выписка из реестра СРО.`,
+        text_2: ``,
+      },
+      {
+        id: 3,
+        icon: '',
+        text_1: `Выписка из реестра МЧС проектировщиков.`,
+        text_2: ``,
+      },
+      {
+        id: 4,
+        icon: '',
+        text_1: `Сертификаты повышения квалификации в области монтажа`,
+        text_2: `и обслуживания систем пожарной безопасности.`,
+      },
+      {
+        id: 5,
+        icon: '',
+        text_1: `Сертификаты обучения по установке и настройке `,
+        text_2: `оборудования разных производителей (Болид, Рубеж, Стрелец).`,
+      },
+    ],
+  },
+};
+
+//
+// youGet
+//
+
+export const youGet: any = {
+  wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
+  heading: { sup: '', main: 'Что в итоге вы получаете', sub: '' },
+  content: [
+    {
+      id: 1,
+      image: num1,
+      text_1: `Услугу под ключ`,
+      text_2:
+        'Проектирование, поставку оборудования, монтажные работы и полный комплект документов от одной компании.',
+    },
+    {
+      id: 2,
+      image: num2,
+      text_1: `Рабочую систему`,
+      text_2: `Полностью работоспособную систему, смонтированную согласно действующим нормам и правилам пожарной безопасности.`,
+    },
+    {
+      id: 3,
+      image: num3,
+      text_1: `Комплект документов`,
+      text_2: `Необходимый для эксплуатации системы, и успешного прохождения проверок МЧС.`,
+    },
+    {
+      id: 4,
+      image: num4,
+      text_1: `Экономию бюджета`,
+      text_2: `Мы предложим Вам наиболее оптимальный вариант оборудования и работ исходя из особенностей вашего объекта.`,
+    },
+    {
+      id: 5,
+      image: num5,
+      text_1: `Качественный монтаж`,
+      text_2: `Наши монтажники не задевают интерьер и коммуникации, и не оставляют после себя мусор.`,
+    },
+    {
+      id: 6,
+      image: num6,
+      text_1: `Бесплатное обучение`,
+      text_2: `Наши специалисты проведут обучение вашего персонала по эксплуатации установленной системы.`,
+    },
+  ],
+};
+
+//
+// faq
+//
 
 export const faq: any = {
   wrapper: { bgColor: '', bgImage: '', altBgImage: '' },

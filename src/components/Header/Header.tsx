@@ -2,11 +2,9 @@ import cn from 'classnames';
 import styles from './header.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
-import {
-  HiOutlinePhone,
-  HiOutlinePhoneIncoming,
-  HiOutlineMail,
-} from 'react-icons/hi';
+import { IconPhone, IconPhoneIncoming, IconMail } from '@tabler/icons-react';
+import { IconChevronDown } from '@tabler/icons-react';
+
 import TelegramIcon from '@/public/icons/icon_telegram.svg';
 import WhatsappIcon from '@/public/icons/icon_whatsapp.svg';
 import VkIcon from '@/public/icons/icon_vk.svg';
@@ -24,17 +22,17 @@ export const Header = ({ className }: any): JSX.Element => {
           <div className={styles.rigt}>
             <ul className={styles.contacts}>
               <li className={styles.contacts_item}>
-                <HiOutlinePhoneIncoming className={styles.contacts_item_icon} />
+                <IconPhoneIncoming className={styles.contacts_item_icon} />
                 <a href="tel:+7(499)702-45-65">Перезвонить</a>
               </li>
               <li className={styles.contacts_item}>
-                <HiOutlinePhone className={styles.contacts_item_icon} />
+                <IconPhone className={styles.contacts_item_icon} />
                 <a className={styles.phone} href="tel:+7(499)702-45-65">
                   +7 (499) 702-45-65
                 </a>
               </li>
               <li className={styles.contacts_item}>
-                <HiOutlineMail className={styles.contacts_item_icon} />
+                <IconMail className={styles.contacts_item_icon} />
                 <a href="mailto:info@orionsb.ru">info@orionsb.ru</a>
               </li>
             </ul>

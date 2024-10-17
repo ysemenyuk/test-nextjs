@@ -1,5 +1,3 @@
-'use client';
-
 import styles from './page.module.scss';
 import Link from 'next/link';
 import useModal from '@/src/hooks/useModal';
@@ -19,27 +17,28 @@ import { MyAlert } from '../components/Sections/MyAlert/MyAlert';
 import { Aps } from '../components/Sections/Aps/Aps';
 import { Soue } from '../components/Sections/Soue/Soue';
 import { MyAccordion } from '../components/Sections/MyAccordion/MyAccordion';
+import { YouGet } from '../components/Sections/YouGet/YouGet';
+import { Brands } from '../components/Sections/Brands/Brands';
+import { Documents } from '../components/Sections/Documents/Documents';
 
 export default function Home() {
-  const [isOpen, { open, close }] = useModal(false);
-
-  const sendMessage = async () => {
-    await send({ name: 'name', phone: '1234' });
-    close();
-  };
-
   const sections: any[] = [
     { id: 1, Content: Numbers, data: data.numbers },
-    { id: 2, Content: MyAlert, data: data.alert },
+    // { id: 2, Content: MyAlert, data: data.alert },
     { id: 3, Content: Uslugi, data: data.uslugi },
     { id: 4, Content: Aps, data: data.aps },
     { id: 5, Content: Soue, data: data.soue },
-    { id: 5, Content: MyAccordion, data: data.faq },
 
-    // { id: 3, Content: Systems, data: data.ohrannyeSistemy },
-    // { id: 4, Content: Systems, data: data.pozharnyeSistemy },
-    // { id: 5, Content: Objects, data: data.objects },
-    // { id: 6, Content: WhyUs, data: data.whyUs },
+    { id: 6, Content: Systems, data: data.pozharnyeSistemy },
+    { id: 7, Content: Systems, data: data.ohrannyeSistemy },
+
+    { id: 8, Content: Objects, data: data.objects },
+    { id: 9, Content: WhyUs, data: data.whyUs },
+    { id: 10, Content: Documents, data: data.docs },
+
+    { id: 11, Content: Brands, data: data.brands },
+    { id: 12, Content: YouGet, data: data.youGet },
+    { id: 13, Content: MyAccordion, data: data.faq },
   ];
 
   return (
@@ -52,39 +51,6 @@ export default function Home() {
           <Content data={data.content} />
         </Section>
       ))}
-
-      <div
-        style={{
-          height: '300px',
-          display: 'flex',
-          flexDirection: 'column',
-          width: '300px',
-          margin: '50px auto',
-        }}
-      >
-        <div>
-          <Link href="/">main page</Link>
-        </div>
-        <div>
-          <Link href="/videonablyudenie">/videonabludenie</Link>
-        </div>
-        <div>
-          <Link href="/pozharnaya-signalizaciya">
-            /pozharnaya-signalizaciya
-          </Link>
-        </div>
-
-        <Button primary onClick={open}>
-          OpenModal
-        </Button>
-      </div>
-
-      <Modal isOpen={isOpen} onClose={close}>
-        <h2>Hello</h2>
-        <div>I am a modal</div>
-        <button onClick={sendMessage}>sendMessage</button>
-        <button onClick={close}>close</button>
-      </Modal>
     </>
   );
 }

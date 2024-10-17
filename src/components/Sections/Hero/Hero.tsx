@@ -2,8 +2,10 @@ import cn from 'classnames';
 import Image from 'next/image';
 import styles from './hero.module.scss';
 import { Button } from '../../UI/Button/Button';
+import { IconPointFilled } from '@tabler/icons-react';
 
 export const Hero = ({ data, className }: any): JSX.Element => {
+  const [supText1, supText2, supText3] = data.heading_sup;
   return (
     <section className={cn(className, styles.section)}>
       <Image
@@ -34,9 +36,16 @@ export const Hero = ({ data, className }: any): JSX.Element => {
 
         <div className={cn(styles.heading_container)}>
           <div className={cn(styles.heading)}>
-            <span className={styles.sup}>{data.sup}</span>
-            <h1>{data.heading}</h1>
-            <span className={styles.sub}>{data.sub}</span>
+            <div className={cn(styles.sup)}>
+              <span>{supText1}</span>
+              <IconPointFilled color={'#ff6600'} />
+              <span>{supText2}</span>
+              <IconPointFilled color={'#ff6600'} />
+              <span>{supText3}</span>
+            </div>
+
+            <h1>{data.heading_main}</h1>
+            <span className={styles.sub}>{data.heading_sub}</span>
           </div>
           <hr />
           <div className={styles.text}>
