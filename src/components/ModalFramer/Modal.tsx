@@ -1,8 +1,7 @@
 'use client';
 
-import { useRef } from 'react';
 import styles from './Modal.module.css';
-import { RefObject, FC, MouseEvent, useEffect } from 'react';
+import { FC, MouseEvent, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 

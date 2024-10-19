@@ -1,56 +1,60 @@
 import styles from './page.module.scss';
 import Link from 'next/link';
-import useModal from '@/src/hooks/useModal';
-import { Button } from '@/src/components/UI/Button/Button';
-import Modal from '@/src/components/ModalFramer/Modal';
-import { send } from '@/src/app/actions';
 import * as data from './data';
-import { Hero } from '@/src/components/Sections/Hero/Hero';
-import { Uslugi } from '@/src/components/Sections/Uslugi/Uslugi';
-import { Systems } from '@/src/components/Sections/Systems/Systems';
-import { Numbers } from '@/src/components/Sections/Numbers/Numbers';
-import { Objects } from '@/src/components/Sections/Objects/Objects';
-import { WhyUs } from '@/src/components/Sections/WhyUs/WhyUs';
-import { Section } from '@/src/components/Section/Section';
-import { Heading } from '@/src/components/UI/Heading/Heading';
-import { MyAlert } from '../components/Sections/MyAlert/MyAlert';
-import { Aps } from '../components/Sections/Aps/Aps';
-import { Soue } from '../components/Sections/Soue/Soue';
-import { MyAccordion } from '../components/Sections/MyAccordion/MyAccordion';
-import { YouGet } from '../components/Sections/YouGet/YouGet';
-import { Brands } from '../components/Sections/Brands/Brands';
-import { Documents } from '../components/Sections/Documents/Documents';
+
+import { Section } from '@/src/components/SectionWrapper/Section';
+import { Heading } from '@/src/components/SectionHeading/Heading';
+import { Hero } from '@/src/components/Hero/Hero';
+import { Uslugi } from '@/src/components/SectionContent/Uslugi/Uslugi';
+import { Systems } from '@/src/components/SectionContent/Systems/Systems';
+import { Numbers } from '@/src/components/SectionContent/Numbers/Numbers';
+import { Objects } from '@/src/components/SectionContent/Objects/Objects';
+import { WhyUs } from '@/src/components/SectionContent/WhyUs/WhyUs';
+import { MyAlert } from '../components/SectionContent/Alert/Alert';
+import { Aps } from '../components/SectionContent/Aps/Aps';
+import { Soue } from '../components/SectionContent/Soue/Soue';
+import { MyAccordion } from '../components/SectionContent/MyAccordion/MyAccordion';
+import { YouGet } from '../components/SectionContent/YouGet/YouGet';
+import { Brands } from '../components/SectionContent/Brands/Brands';
+import { Documents } from '../components/SectionContent/Documents/Documents';
+import { ActionWithButton } from '../components/SectionContent/ActionWithButton/ActionWithButton';
+import { SendEmailModal } from '../components/Modals/SendEmailModal/SendEmailModal';
 
 export default function Home() {
   const sections: any[] = [
-    { id: 1, Content: Numbers, data: data.numbers },
-    // { id: 2, Content: MyAlert, data: data.alert },
-    { id: 3, Content: Uslugi, data: data.uslugi },
-    { id: 4, Content: Aps, data: data.aps },
-    { id: 5, Content: Soue, data: data.soue },
-
-    { id: 6, Content: Systems, data: data.pozharnyeSistemy },
-    { id: 7, Content: Systems, data: data.ohrannyeSistemy },
-
-    { id: 8, Content: Objects, data: data.objects },
-    { id: 9, Content: WhyUs, data: data.whyUs },
-    { id: 10, Content: Documents, data: data.docs },
-
-    { id: 11, Content: Brands, data: data.brands },
-    { id: 12, Content: YouGet, data: data.youGet },
-    { id: 13, Content: MyAccordion, data: data.faq },
+    [Numbers, data.numbers],
+    [Uslugi, data.uslugi],
+    [Aps, data.aps],
+    [Soue, data.soue],
+    [Systems, data.pozharnyeSistemy, styles.gray_1],
+    [Systems, data.ohrannyeSistemy, styles.gray_1],
+    [Objects, data.objects],
+    [ActionWithButton, {}, styles.bgForm_1],
+    [WhyUs, data.whyUs],
+    [Documents, data.docs, styles.gray_1],
+    [Brands, data.brands],
+    [YouGet, data.youGet],
+    [MyAlert, data.alert],
+    [MyAccordion, data.faq],
   ];
 
   return (
     <>
       <Hero data={data.hero} />
 
-      {sections.map(({ id, Content, data, cn }) => (
-        <Section key={id} data={data.wrapper} className={cn}>
-          <Heading data={data.heading} />
-          <Content data={data.content} />
-        </Section>
-      ))}
+      {sections.map(([Content, data, ...classNames]) => {
+        const [wrapper, heading, content] = classNames;
+        return (
+          <Section key={data.id} data={data.wrapper} className={wrapper}>
+            {data.heading && (
+              <Heading data={data.heading} className={heading} />
+            )}
+            <Content data={data.content} className={content} />
+          </Section>
+        );
+      })}
+
+      <SendEmailModal />
     </>
   );
 }

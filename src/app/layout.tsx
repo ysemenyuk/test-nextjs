@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 
-import './globals.css';
-import '@mantine/core/styles.css';
-
 import { MantineProvider, ColorSchemeScript } from '@mantine/core';
 import { theme } from '../theme';
 
 import { Footer } from '@/src/components/Footer/Footer';
 import { Header } from '@/src/components/Header/Header';
+
+import './globals.css';
+import '@mantine/core/styles.css';
 
 const november = localFont({
   src: [
