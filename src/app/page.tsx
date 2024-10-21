@@ -1,5 +1,5 @@
 import styles from './page.module.scss';
-import * as data from './data/home';
+import * as data from '../data/home';
 import { Section } from '@/src/components/SectionWrapper/Section';
 import { Heading } from '@/src/components/SectionHeading/Heading';
 import { Hero } from '@/src/components/Hero/Hero';
