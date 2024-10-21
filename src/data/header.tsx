@@ -16,9 +16,9 @@ export const header: any = {
     src: OrionLogo,
     alt: 'Орион',
   },
-  leftText: 'Работаем с 2013 г. Москва и МО.',
+  leftText: 'Работаем с 2012 г. Москва и МО.',
   menu: [
-    { text: 'О_компании', href: '', icon: '' },
+    { text: 'О компании', href: '', icon: '' },
     { text: 'Системы', href: '', icon: <ArrowDownIcon /> },
     { text: 'Услуги', href: '', icon: <ArrowDownIcon /> },
     { text: 'Магазин', href: '', icon: <LinkIcon /> },
@@ -27,12 +27,12 @@ export const header: any = {
   contacts: {
     callBack: {
       type: 'button',
-      text: 'Перезвони',
+      text: 'Перезвонить',
       icon: <IconPhoneIncoming />,
     },
     phone: {
       type: 'link',
-      text: '+7(499)702-45-65',
+      text: `+7\u00a0(499)\u00a0702-45-65`,
       href: 'tel:+7(499)702-45-65',
       icon: <IconPhone />,
     },

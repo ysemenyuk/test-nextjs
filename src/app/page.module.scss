@@ -18,6 +18,11 @@
   background-color: #f8f9fa
 }
 
-.bgForm_1 {
-  background-color: #525252;
+.dark_form {
+  background: linear-gradient(90deg, #525252 0%, #676666 50%, #525252 100%);
+}
+
+.light_form {
+  background: linear-gradient(90deg, #c6c6c6 0%, #eeeeee 50%, #c6c6c6 100%);
+  // background: linear-gradient(180deg, #f8f9fa 0%, #c6c6c6 100%);
 }

@@ -8,7 +8,7 @@ const Item = ({ item }: any): JSX.Element => (
       <Image alt={item.text_1} src={item.image} />
     </div>
     <div className={cn(styles.text_wrapper)}>
-      <div className={cn(styles.title)}>{item.text_1}</div>
+      <h4 className={cn(styles.title)}>{item.text_1}</h4>
       <p className={cn(styles.text)}>{item.text_2}</p>
     </div>
   </div>

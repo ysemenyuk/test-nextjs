@@ -15,8 +15,10 @@ import { MyAccordion } from '../components/SectionContent/MyAccordion/MyAccordio
 import { YouGet } from '../components/SectionContent/YouGet/YouGet';
 import { Brands } from '../components/SectionContent/Brands/Brands';
 import { Documents } from '../components/SectionContent/Documents/Documents';
-import { ActionWithButton } from '../components/SectionContent/ActionWithButton/ActionWithButton';
+import { ActionDark } from '../components/SectionContent/ActionDark/ActionDark';
 import { CallBackModal } from '../components/Modals/CallBackModal/CallBackModal';
+import { ActionLight } from '../components/SectionContent/ActionLight/ActionLight';
+import { WhatElse } from '../components/SectionContent/WhatElse/WhatElse';
 
 export default function Home() {
   const sections: any[] = [
@@ -25,15 +27,17 @@ export default function Home() {
     [Aps, data.aps],
     [Soue, data.soue],
     [Systems, data.pozharnyeSistemy, styles.gray_1],
-    [Systems, data.ohrannyeSistemy, styles.gray_1],
+    // [Systems, data.ohrannyeSistemy, styles.gray_1],
     [Objects, data.objects],
-    [ActionWithButton, data.actionWithButton, styles.bgForm_1],
+    [ActionDark, data.actionDark, styles.dark_form],
     [WhyUs, data.whyUs],
     [Documents, data.docs, styles.gray_1],
     [Brands, data.brands],
     [YouGet, data.youGet],
     [MyAlert, data.alert],
+    [WhatElse, data.whatElse],
     [MyAccordion, data.faq],
+    [ActionLight, data.actionLight, styles.light_form],
   ];
 
   return (

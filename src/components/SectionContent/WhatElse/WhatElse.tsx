@@ -1,16 +1,15 @@
 import cn from 'classnames';
-import styles from './uslugi.module.scss';
+import styles from './whatElse.module.scss';
+import Image from 'next/image';
 
 const Item = ({ item }: any): JSX.Element => (
   <div key={item.id} className={cn(styles.item)}>
-    <div className={cn(styles.icon_wrapper)}>{item.icon}</div>
-    <div className={cn(styles.text_wrapper)}>
-      <p>{item.text_1}</p>
-    </div>
+    <Image alt={item.text_1} src={item.image} className={cn(styles.image)} />
+    <div className={cn(styles.text)}>{item.text_1}</div>
   </div>
 );
 
-export const Uslugi = ({ data, className }: any): JSX.Element => {
+export const WhatElse = ({ data, className }: any): JSX.Element => {
   return (
     <div className={cn(styles.container, className)}>
       {data.map((item: any) => (

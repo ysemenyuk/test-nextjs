@@ -5,9 +5,10 @@ import styles from './header.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import { IconPhone, IconPhoneIncoming, IconMail } from '@tabler/icons-react';
-
-import { header } from '@/src/data/header';
 import { useCountStore } from '@/src/stores/modalStore';
+import { Button } from '../UI/Button/Button';
+import { header } from '@/src/data/header';
+
 const { messengers, menu, logo, contacts, leftText } = header;
 const { callBack, phone, mail } = contacts;
 
@@ -36,35 +37,20 @@ export const Header = ({ className }: any): JSX.Element => {
         <div className={styles.top_bar_container}>
           <div className={styles.left}>{leftText}</div>
           <div className={styles.rigt}>
-            <ul className={styles.contacts}>
-              <li>
-                <button
-                  className={cn(styles.contacts_item, styles.callBack)}
-                  onClick={open}
-                >
-                  <IconPhoneIncoming className={styles.contacts_item_icon} />
-                  {callBack.text}
-                </button>
-              </li>
-              <li>
-                <Link
-                  className={cn(styles.contacts_item, styles.phone)}
-                  href={phone.href}
-                >
-                  <IconPhone className={styles.contacts_item_icon} />
-                  {phone.text}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={cn(styles.contacts_item, styles.mail)}
-                  href={mail.href}
-                >
-                  <IconMail className={styles.contacts_item_icon} />
-                  {mail.text}
-                </Link>
-              </li>
-            </ul>
+            <div className={styles.contacts}>
+              <Button link className={cn(styles.contacts_item)} onClick={open}>
+                <IconPhoneIncoming />
+                {callBack.text}
+              </Button>
+              <Link className={cn(styles.contacts_item)} href={phone.href}>
+                <IconPhone />
+                {phone.text}
+              </Link>
+              <Link className={cn(styles.contacts_item)} href={mail.href}>
+                <IconMail />
+                {mail.text}
+              </Link>
+            </div>
 
             <ul className={styles.messengers}>{messengersItems}</ul>
           </div>

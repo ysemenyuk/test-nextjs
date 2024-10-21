@@ -27,15 +27,25 @@
   .widgets_container {
     grid-column: 2;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: auto auto auto auto;
+    gap: 60px;
+    white-space: pre-line;
+    line-height: normal;
 
-    outline: 1px solid green;
+    h4 {
+      color: var(--white);
+    }
+
+    ul {
+      display: grid;
+      gap: 4px;
+    }
   }
 
   .copyrigts {
     border-top: 1px solid hsla(0, 0%, 100%, .1);
-    font-size: 14px;
-    line-height: 16px;
+    font-size: 16px;
+    line-height: normal;
     padding: 20px 0;
     
     display: grid;
@@ -46,8 +56,6 @@
   .copyrigts_container {
     grid-column: 2;
     display: grid;
-    grid-template-columns: 1fr auto;
-
-    outline: 1px solid green;
+    justify-content: center;
   }
 

@@ -5,6 +5,7 @@ export const Button = ({
   children,
   primary,
   rounded,
+  link,
   className,
   ...props
 }: any): JSX.Element => {
@@ -15,6 +16,7 @@ export const Button = ({
         {
           [styles.primary]: primary,
           [styles.rounded]: rounded,
+          [styles.link]: link,
         },
         className
       )}

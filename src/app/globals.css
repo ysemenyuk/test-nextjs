@@ -58,16 +58,17 @@ body {
   grid-template-rows: auto 1fr auto;
 
   .header {
-    outline: 1px solid black;
+    /* outline: 1px solid black; */
+    /* position: sticky; */
   }
   
   .main {
     margin-top: -136px;
-    outline: 1px solid black;
+    /* outline: 1px solid black; */
   }
   
   .footer {
-    outline: 1px solid black;
+    /* outline: 1px solid black; */
   }
 }
 
