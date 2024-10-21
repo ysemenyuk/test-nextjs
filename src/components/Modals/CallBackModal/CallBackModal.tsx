@@ -7,12 +7,12 @@ import { PhoneForm } from '../../Forms/PhoneForm/PhoneForm';
 import { useCountStore } from '@/src/stores/modalStore';
 import Link from 'next/link';
 
-export const CallBackModal = ({ className }: any): JSX.Element => {
+export const CallBackModal = (): JSX.Element => {
   const { isOpen, close } = useCountStore((state) => state);
 
   return (
     <Modal opened={isOpen} onClose={close} centered>
-      <div className={styles.wrapper}>
+      <div className={cn(styles.wrapper)}>
         <div className={styles.heading}>
           <h3>Оперативно перезвоним</h3>
           <p>

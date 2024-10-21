@@ -27,7 +27,7 @@ export default function Home() {
     [Systems, data.pozharnyeSistemy, styles.gray_1],
     [Systems, data.ohrannyeSistemy, styles.gray_1],
     [Objects, data.objects],
-    [ActionWithButton, {}, styles.bgForm_1],
+    [ActionWithButton, data.actionWithButton, styles.bgForm_1],
     [WhyUs, data.whyUs],
     [Documents, data.docs, styles.gray_1],
     [Brands, data.brands],

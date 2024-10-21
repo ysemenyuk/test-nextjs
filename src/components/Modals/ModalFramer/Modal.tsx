@@ -64,7 +64,7 @@ const Modal: FC<IModalProps> = ({ children, onClose }) => {
 
       document.removeEventListener('keydown', onKeyDown);
     };
-  }, []);
+  }, [onClose]);
 
   return ReactDOM.createPortal(
     <motion.div

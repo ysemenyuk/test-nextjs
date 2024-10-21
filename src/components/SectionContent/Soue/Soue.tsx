@@ -19,6 +19,7 @@ export const Soue = ({ data, className }: any): JSX.Element => {
           src={data.image}
           style={{
             height: '100%',
+            width: '100%',
             objectFit: 'cover',
           }}
         />

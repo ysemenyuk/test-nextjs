@@ -1,16 +1,15 @@
 'use client';
 
-import cn from 'classnames';
+// import cn from 'classnames';
 import styles from './emailForm.module.scss';
-import { IconPointFilled } from '@tabler/icons-react';
-import { Button, Group, TextInput, LoadingOverlay } from '@mantine/core';
+import { Button, TextInput } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { send } from '@/src/app/actions';
 import { useState } from 'react';
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
-export const EmailForm = ({ className }: any): JSX.Element => {
+export const EmailForm = (): JSX.Element => {
   const [sending, setSending] = useState(false);
   const form = useForm({
     mode: 'uncontrolled',

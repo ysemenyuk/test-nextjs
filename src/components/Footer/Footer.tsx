@@ -17,7 +17,9 @@ export const Footer = ({ className }: any): JSX.Element => {
       </div>
       <div className={styles.copyrigts}>
         <div className={styles.copyrigts_container}>
-          <span>2012 - 2024 ООО "Орион" © Все права защищены.</span>
+          <span>
+            2012 - 2024 ООО &quot;Орион&quot; &copy; Все права защищены.
+          </span>
           <a>top</a>
         </div>
       </div>

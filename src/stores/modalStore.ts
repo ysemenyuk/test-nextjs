@@ -15,7 +15,7 @@ interface Actions {
 export const useCountStore = create<States & Actions>((set) => ({
   // States
   isOpen: false,
-    
+
   // Actions
   open: () => set({ isOpen: true }),
   close: () => set({ isOpen: false }),

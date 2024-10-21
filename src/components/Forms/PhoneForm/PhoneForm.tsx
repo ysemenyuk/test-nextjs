@@ -1,22 +1,14 @@
 'use client';
 
-import cn from 'classnames';
 import styles from './phoneForm.module.scss';
-import { IconPointFilled } from '@tabler/icons-react';
-import {
-  Button,
-  Group,
-  TextInput,
-  LoadingOverlay,
-  Checkbox,
-} from '@mantine/core';
+import { Button, TextInput } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { send } from '@/src/app/actions';
 import { useState } from 'react';
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
-export const PhoneForm = ({ close, className }: any): JSX.Element => {
+export const PhoneForm = ({ close }: any): JSX.Element => {
   const [sending, setSending] = useState(false);
   const form = useForm({
     mode: 'uncontrolled',
@@ -28,7 +20,7 @@ export const PhoneForm = ({ close, className }: any): JSX.Element => {
       phone: (value) =>
         /(^8|7|\+7)((\d{10})|(\s\(\d{3}\)\s\d{3}\s\d{2}\s\d{2}))/.test(value)
           ? null
-          : 'Invalid phone number',
+          : 'Неверный формат',
     },
   });
 
@@ -50,8 +42,8 @@ export const PhoneForm = ({ close, className }: any): JSX.Element => {
         size="md"
         radius="md"
         disabled={sending}
-        // label="Name"
-        placeholder="your name"
+        label="Имя"
+        placeholder="Ваше имя"
         key={form.key('name')}
         {...form.getInputProps('name')}
       />
@@ -60,8 +52,8 @@ export const PhoneForm = ({ close, className }: any): JSX.Element => {
         size="md"
         radius="md"
         disabled={sending}
-        // label="Phone"
-        // withAsterisk
+        label="Телефон"
+        withAsterisk
         placeholder="+79291234567"
         key={form.key('phone')}
         {...form.getInputProps('phone')}

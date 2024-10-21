@@ -3,40 +3,34 @@
 import cn from 'classnames';
 import styles from './actionWithButton.module.scss';
 import { IconPointFilled } from '@tabler/icons-react';
-import { Modal } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
 import { Button } from '@/src/components/UI/Button/Button';
-import { PhoneForm } from '../../Forms/PhoneForm/PhoneForm';
-import useModal from '../../../hooks/useModal';
-
 import { useCountStore } from '@/src/stores/modalStore';
 
-const Heading = (): JSX.Element => (
+const Title = ({ data }: any): JSX.Element => (
   <div className={styles.title_wrapper}>
     <div className={styles.title}>
-      <div>Оставьте заявку</div>
-      <div>На бесплатный выезд инженера</div>
+      <div>{data.title}</div>
+      <div>{data.sub_title}</div>
     </div>
 
     <div className={styles.sub_title}>
-      <span>Изучит особенности объекта</span>
+      <span>{data.text_1}</span>
       <IconPointFilled color={'#ff6600'} />
-      <span>Подберет оптимальное решение</span>
+      <span>{data.text_2}</span>
       <IconPointFilled color={'#ff6600'} />
-      <span>Ответит на все вопросы</span>
+      <span>{data.text_3}</span>
     </div>
   </div>
 );
 
-export const ActionWithButton = ({ className }: any): JSX.Element => {
+export const ActionWithButton = ({ data, className }: any): JSX.Element => {
   const { open } = useCountStore();
 
   return (
     <div className={cn(className, styles.wrapper)}>
-      <Heading />
-
+      <Title data={data} />
       <Button rounded onClick={open}>
-        Отправить заявку
+        {data.btnText}
       </Button>
     </div>
   );
