@@ -29,7 +29,7 @@ const Heading = (): JSX.Element => (
 );
 
 export const ActionWithButton = ({ className }: any): JSX.Element => {
-  const { open } = useCountStore((state) => state);
+  const { open } = useCountStore();
 
   return (
     <div className={cn(className, styles.wrapper)}>

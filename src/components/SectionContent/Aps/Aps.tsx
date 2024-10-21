@@ -8,9 +8,19 @@ export const Aps = ({ data, className }: any): JSX.Element => {
   return (
     <div className={cn(styles.container, className)}>
       <div className={cn(styles.image)}>
-        <Image alt={data.alt} src={data.image} />
+        <Image
+          alt={data.alt}
+          src={data.image}
+          style={{
+            height: '100%',
+            objectFit: 'cover',
+          }}
+        />
       </div>
-      <div className={cn(styles.text)}>{text}</div>
+      <div className={cn(styles.block)}>
+        <h3 className={cn(styles.title)}>{data.title}</h3>
+        <div className={cn(styles.text)}>{text}</div>
+      </div>
     </div>
   );
 };

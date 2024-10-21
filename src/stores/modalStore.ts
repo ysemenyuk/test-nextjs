@@ -17,6 +17,6 @@ export const useCountStore = create<States & Actions>((set) => ({
   isOpen: false,
     
   // Actions
-  open: () => set((state) => ({ isOpen: true })),
-  close: () => set((state) => ({ isOpen: false })),
+  open: () => set({ isOpen: true }),
+  close: () => set({ isOpen: false }),
 }));

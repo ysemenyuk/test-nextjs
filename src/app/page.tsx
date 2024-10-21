@@ -1,7 +1,5 @@
 import styles from './page.module.scss';
-import Link from 'next/link';
-import * as data from './data';
-
+import * as data from './data/home';
 import { Section } from '@/src/components/SectionWrapper/Section';
 import { Heading } from '@/src/components/SectionHeading/Heading';
 import { Hero } from '@/src/components/Hero/Hero';
@@ -18,7 +16,7 @@ import { YouGet } from '../components/SectionContent/YouGet/YouGet';
 import { Brands } from '../components/SectionContent/Brands/Brands';
 import { Documents } from '../components/SectionContent/Documents/Documents';
 import { ActionWithButton } from '../components/SectionContent/ActionWithButton/ActionWithButton';
-import { SendEmailModal } from '../components/Modals/SendEmailModal/SendEmailModal';
+import { CallBackModal } from '../components/Modals/CallBackModal/CallBackModal';
 
 export default function Home() {
   const sections: any[] = [
@@ -54,7 +52,7 @@ export default function Home() {
         );
       })}
 
-      <SendEmailModal />
+      <CallBackModal />
     </>
   );
 }

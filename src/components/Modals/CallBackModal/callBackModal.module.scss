@@ -1,0 +1,37 @@
+.wrapper {
+  display: grid;
+  gap: 30px;
+  padding: 0 20px 20px;
+
+
+
+}
+
+.heading {
+  display: grid;
+  gap: 12px;
+
+  h3 {
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.privacy {
+  margin: 0;
+  font-size: 14px;
+  line-height: normal;
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    margin: 0;
+    color: rgb(0, 0, 123) ;
+  }
+
+}

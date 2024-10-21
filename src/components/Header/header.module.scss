@@ -2,13 +2,13 @@
   z-index: 100;
 }
 
-.action_bar {
+.top_bar {
   display: grid;
   grid-template-columns: auto minmax(320px, 1180px) auto;
   gap: 20px;
 }
 
-.action_bar_container {
+.top_bar_container {
   grid-column: 2;
   padding: 16px 20px;
   display: flex;
@@ -38,18 +38,32 @@
   font-size: 14px;
   line-height: 24px;
   display: flex;
-  gap: 18px;
+  gap: 4px;
 
   .contacts_item {
     display: flex;
     gap: 6px;
     align-items: center;
+    padding: 0 12px;
+    border-radius: 24px;
   }
+
+  .contacts_item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
   
   .contacts_item_icon {
     height: 20px;
     width: 20px;
     color: rgb(255 255 255 / 50%);
+  }
+
+  .callBack {
+    color: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
   }
 
   .phone {
@@ -59,12 +73,12 @@
 
 
 
-.messagers {
+.messengers {
   display: flex;
   align-items: center;
   gap: 10px;
 
-  .messagers_item {
+  .messengers_item {
     display: flex;
     align-items: center;
   }
@@ -72,13 +86,13 @@
 
 
 
-.menu_bar {
+.main_bar {
   display: grid;
   grid-template-columns: auto minmax(320px, 1180px) auto;
   gap: 20px;
 }
 
-.menu_bar_container {
+.main_bar_container {
   grid-column: 2;
   display: flex;
   gap: 18px;

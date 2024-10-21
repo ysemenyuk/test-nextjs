@@ -16,17 +16,19 @@ import { useState } from 'react';
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
-export const PhoneForm = ({ className }: any): JSX.Element => {
+export const PhoneForm = ({ close, className }: any): JSX.Element => {
   const [sending, setSending] = useState(false);
   const form = useForm({
     mode: 'uncontrolled',
     initialValues: {
       name: '',
-      email: '',
-      termsOfService: false,
+      phone: '',
     },
     validate: {
-      email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
+      phone: (value) =>
+        /(^8|7|\+7)((\d{10})|(\s\(\d{3}\)\s\d{3}\s\d{2}\s\d{2}))/.test(value)
+          ? null
+          : 'Invalid phone number',
     },
   });
 
@@ -38,49 +40,41 @@ export const PhoneForm = ({ className }: any): JSX.Element => {
     setSending(false);
     console.log(2);
     form.reset();
+    close();
   };
 
   return (
-    <div className={cn(className, styles.wrapper)}>
-      <form className={styles.form} onSubmit={form.onSubmit(sendMessage)}>
-        <TextInput
-          classNames={{
-            input: styles.input,
-          }}
-          disabled={sending}
-          label="Name"
-          placeholder="your name"
-          key={form.key('name')}
-          {...form.getInputProps('name')}
-        />
-        <TextInput
-          classNames={{
-            input: styles.input,
-          }}
-          disabled={sending}
-          label="Email"
-          withAsterisk
-          placeholder="your@email.com"
-          key={form.key('email')}
-          {...form.getInputProps('email')}
-        />
-
-        <Checkbox
-          label="I agree to sell my privacy"
-          key={form.key('termsOfService')}
-          {...form.getInputProps('termsOfService', { type: 'checkbox' })}
-        />
-
-        <Button
-          classNames={{
-            root: styles.button,
-          }}
-          type="submit"
-          loading={sending}
-        >
-          Отправить
-        </Button>
-      </form>
-    </div>
+    <form className={styles.form} onSubmit={form.onSubmit(sendMessage)}>
+      <TextInput
+        classNames={{ input: styles.input }}
+        size="md"
+        radius="md"
+        disabled={sending}
+        // label="Name"
+        placeholder="your name"
+        key={form.key('name')}
+        {...form.getInputProps('name')}
+      />
+      <TextInput
+        classNames={{ input: styles.input }}
+        size="md"
+        radius="md"
+        disabled={sending}
+        // label="Phone"
+        // withAsterisk
+        placeholder="+79291234567"
+        key={form.key('phone')}
+        {...form.getInputProps('phone')}
+      />
+      <Button
+        classNames={{ root: styles.button }}
+        size="md"
+        radius="md"
+        type="submit"
+        loading={sending}
+      >
+        Отправить
+      </Button>
+    </form>
   );
 };

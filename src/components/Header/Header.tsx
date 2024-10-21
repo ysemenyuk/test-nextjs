@@ -1,98 +1,86 @@
+'use client';
+
 import cn from 'classnames';
 import styles from './header.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import { IconPhone, IconPhoneIncoming, IconMail } from '@tabler/icons-react';
-import { IconChevronDown } from '@tabler/icons-react';
 
-import TelegramIcon from '@/public/icons/icon_telegram.svg';
-import WhatsappIcon from '@/public/icons/icon_whatsapp.svg';
-import VkIcon from '@/public/icons/icon_vk.svg';
-import LinkIcon from '@/public/icons/icon_external_link.svg';
-import ArrowDownIcon from '@/public/icons/icon_arrow_down.svg';
-import OrionLogo from '@/public/images/orion-logo.webp';
+import { header } from '@/src/data/header';
+import { useCountStore } from '@/src/stores/modalStore';
+const { messengers, menu, logo, contacts, leftText } = header;
+const { callBack, phone, mail } = contacts;
 
 export const Header = ({ className }: any): JSX.Element => {
+  const { open } = useCountStore();
+
+  const messengersItems = messengers.map((item: any) => (
+    <li key={item.name}>
+      <Link className={styles.messengers_item} href={item.href}>
+        {item.icon}
+      </Link>
+    </li>
+  ));
+
+  const menuItems = menu.map((item: any) => (
+    <li key={item.text}>
+      <Link className={styles.menu_item} href={item.href}>
+        {item.text} {item.icon}
+      </Link>
+    </li>
+  ));
+
   return (
     <header className={cn(className, styles.header)}>
-      <div className={styles.action_bar}>
-        <div className={styles.action_bar_container}>
-          <div className={styles.left}>Работаем с 2013 г. Москва и МО.</div>
-
+      <div className={styles.top_bar}>
+        <div className={styles.top_bar_container}>
+          <div className={styles.left}>{leftText}</div>
           <div className={styles.rigt}>
             <ul className={styles.contacts}>
-              <li className={styles.contacts_item}>
-                <IconPhoneIncoming className={styles.contacts_item_icon} />
-                <a href="tel:+7(499)702-45-65">Перезвонить</a>
+              <li>
+                <button
+                  className={cn(styles.contacts_item, styles.callBack)}
+                  onClick={open}
+                >
+                  <IconPhoneIncoming className={styles.contacts_item_icon} />
+                  {callBack.text}
+                </button>
               </li>
-              <li className={styles.contacts_item}>
-                <IconPhone className={styles.contacts_item_icon} />
-                <a className={styles.phone} href="tel:+7(499)702-45-65">
-                  +7 (499) 702-45-65
-                </a>
+              <li>
+                <Link
+                  className={cn(styles.contacts_item, styles.phone)}
+                  href={phone.href}
+                >
+                  <IconPhone className={styles.contacts_item_icon} />
+                  {phone.text}
+                </Link>
               </li>
-              <li className={styles.contacts_item}>
-                <IconMail className={styles.contacts_item_icon} />
-                <a href="mailto:info@orionsb.ru">info@orionsb.ru</a>
+              <li>
+                <Link
+                  className={cn(styles.contacts_item, styles.mail)}
+                  href={mail.href}
+                >
+                  <IconMail className={styles.contacts_item_icon} />
+                  {mail.text}
+                </Link>
               </li>
             </ul>
 
-            <ul className={styles.messagers}>
-              <li className={styles.messagers_item}>
-                <WhatsappIcon />
-              </li>
-              <li className={styles.messagers_item}>
-                <TelegramIcon />
-              </li>
-              <li className={styles.messagers_item}>
-                <VkIcon />
-              </li>
-            </ul>
+            <ul className={styles.messengers}>{messengersItems}</ul>
           </div>
         </div>
       </div>
 
-      <div className={styles.menu_bar}>
-        <div className={styles.menu_bar_container}>
+      <div className={styles.main_bar}>
+        <div className={styles.main_bar_container}>
           <div className={styles.logo_container}>
             <Link className={styles.logo} href="/">
-              <Image alt="Logo" height={50} src={OrionLogo} quality={100} />
+              <Image alt={logo.alt} height={50} src={logo.src} quality={100} />
             </Link>
           </div>
 
           <div className={styles.menu_container}>
-            <ul className={styles.menu}>
-              <li>
-                <Link className={styles.menu_item} href="/">
-                  О_компании
-                </Link>
-              </li>
-              <li>
-                <Link className={styles.menu_item} href="/">
-                  Системы <ArrowDownIcon />
-                </Link>
-              </li>
-              <li>
-                <Link className={styles.menu_item} href="/">
-                  Услуги <ArrowDownIcon />
-                </Link>
-              </li>
-              <li>
-                <Link className={styles.menu_item} href="/">
-                  Магазин <LinkIcon />
-                </Link>
-              </li>
-              <li>
-                <Link className={styles.menu_item} href="/">
-                  Блог
-                </Link>
-              </li>
-              <li>
-                <Link className={styles.menu_item} href="/">
-                  Контакты
-                </Link>
-              </li>
-            </ul>
+            <ul className={styles.menu}>{menuItems}</ul>
           </div>
         </div>
       </div>

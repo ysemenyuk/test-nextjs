@@ -10,6 +10,7 @@ import { useCountStore } from '@/src/stores/modalStore';
 
 export const Hero = ({ data, className }: any): JSX.Element => {
   const [supText1, supText2, supText3] = data.heading_sup;
+
   const text = data.text.map((text: string) => <p key={text}>{text}</p>);
 
   const { open } = useCountStore((state) => state);

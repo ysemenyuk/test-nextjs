@@ -9,6 +9,7 @@ import { Header } from '@/src/components/Header/Header';
 
 import './globals.css';
 import '@mantine/core/styles.css';
+import ScrollToTop from '../components/ScrollToTop/ScrollToTop';
 
 const november = localFont({
   src: [
@@ -67,6 +68,7 @@ export default function RootLayout({
             <Header className="header" />
             <main className="main">{children}</main>
             <Footer className="footer" />
+            <ScrollToTop />
           </div>
         </MantineProvider>
       </body>
