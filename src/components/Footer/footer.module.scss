@@ -40,6 +40,16 @@
       display: grid;
       gap: 4px;
     }
+
+    .link {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+
+      svg {
+        height: 16px;
+      }
+    }
   }
 
   .copyrigts {
@@ -56,6 +66,6 @@
   .copyrigts_container {
     grid-column: 2;
     display: grid;
-    justify-content: center;
+    grid-template-columns: 1fr auto;
   }
 

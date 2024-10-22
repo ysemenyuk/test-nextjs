@@ -18,10 +18,10 @@ export const header: any = {
   },
   leftText: 'Работаем с 2012 г. Москва и МО.',
   menu: [
-    { text: 'О компании', href: '', icon: '' },
-    { text: 'Системы', href: '', icon: <ArrowDownIcon /> },
-    { text: 'Услуги', href: '', icon: <ArrowDownIcon /> },
-    { text: 'Магазин', href: '', icon: <LinkIcon /> },
+    { text: 'Услуги', href: '', icon: '' },
+    { text: 'Системы', href: '', icon: '' },
+    { text: 'Объекты', href: '', icon: '' },
+    { text: 'Оборудование', href: '', icon: '' },
     { text: 'Контакты', href: '', icon: '' },
   ],
   contacts: {
