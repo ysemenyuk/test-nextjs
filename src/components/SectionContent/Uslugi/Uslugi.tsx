@@ -5,7 +5,7 @@ const Item = ({ item }: any): JSX.Element => (
   <div key={item.id} className={cn(styles.item)}>
     <div className={cn(styles.icon_wrapper)}>{item.icon}</div>
     <div className={cn(styles.text_wrapper)}>
-      <p>{item.text_1}</p>
+      <h4>{item.text_1}</h4>
     </div>
   </div>
 );

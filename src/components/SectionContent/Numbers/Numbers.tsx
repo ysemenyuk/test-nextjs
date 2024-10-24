@@ -9,8 +9,7 @@ const Item = ({ item }: any): JSX.Element => (
     </div>
     <hr />
     <div className={cn(styles.text)}>
-      <div>{item.text_1}</div>
-      <div>{item.text_2}</div>
+      <span>{item.text_1}</span>
     </div>
   </div>
 );

@@ -9,7 +9,7 @@ import './globals.css';
 
 import { Footer } from '@/src/components/Footer/Footer';
 import { Header } from '@/src/components/Header/Header';
-import ScrollToTop from '@/src/components/ScrollToTop/ScrollToTop';
+// import ScrollToTop from '@/src/components/ScrollToTop/ScrollToTop';
 
 const november = localFont({
   src: [
@@ -65,9 +65,9 @@ export default function RootLayout({
       <body className={november.className}>
         <MantineProvider theme={theme}>
           <div className="wrapper">
-            {/* <Header className="header" /> */}
+            <Header className="header" />
             <main className="main">{children}</main>
-            {/* <Footer className="footer" /> */}
+            <Footer className="footer" />
             {/* <ScrollToTop /> */}
           </div>
         </MantineProvider>

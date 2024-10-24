@@ -1,17 +1,13 @@
 :root {
   --background: #fff;
   --foreground: #171717;
-
   --black: #171717;
 	--white: #fff;
-	
-  --text-color: #212121;
+	--text-color: #212121;
   --text-color-secondary: #605e5c;
-
-  --primary-color: #ff6600;
+  --primary-color: #f60;
 	--primary-color-hover: #eb5e00;
   --primary-color-active: #bb4b00;
-
   --gray-100: #e1dfdd;
   --gray-200: #bebbb8;
   --gray-300: #a19f9d;
@@ -22,11 +18,10 @@
   --gray-800: #1b1a19;
   --gray-900: #11100f;
 
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
   line-height: normal;
   letter-spacing: normal;
-
 }
 
 * {
@@ -38,14 +33,13 @@ html,
 body {
   max-width: 100vw;
   border: 0;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -57,18 +51,16 @@ body {
   grid-template-rows: auto 1fr auto;
 
   .header {
-    /* outline: 1px solid black; */
-    /* background-color: #797775; */
-    /* position: sticky; */
+    outline: 1px solid black;
   }
   
   .main {
-    /* margin-top: -136px; */
-    /* outline: 1px solid black; */
+    margin-top: -136px;
+    outline: 1px solid black;
   }
   
   .footer {
-    /* outline: 1px solid black; */
+    outline: 1px solid black;
   }
 }
 
@@ -90,13 +82,12 @@ button {
 }
 
 
-@media only screen and (max-width: 576px) {
+@media (width < 576px) {
   :root {
     font-size: 10px;
     font-weight: 400;
     line-height: normal;
     letter-spacing: normal;
-
     outline: 1px solid cornflowerblue;
   }
 }

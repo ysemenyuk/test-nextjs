@@ -3,7 +3,7 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 
-    outline: 1px solid rgb(183, 255, 0);
+    // outline: 1px solid rgb(183, 255, 0);
 }
 
 .item {
@@ -21,13 +21,12 @@
     }
 
     .text_wrapper {
-        font-size: 1rem;
-        line-height: normal;
-        font-weight: 500;
 
-        p {
-            margin: 0;
-            padding: 0;
+        h4 {
+            font-size: 1rem;
+            line-height: normal;
+            font-weight: 500;
+            margin: 4px 0;
         }
     }
 }

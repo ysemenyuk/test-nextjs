@@ -1,8 +1,8 @@
 import TelegramIcon from '@/public/icons/icon_telegram.svg';
 import WhatsappIcon from '@/public/icons/icon_whatsapp.svg';
 import VkIcon from '@/public/icons/icon_vk.svg';
-import LinkIcon from '@/public/icons/icon_external_link.svg';
-import ArrowDownIcon from '@/public/icons/icon_arrow_down.svg';
+// import LinkIcon from '@/public/icons/icon_external_link.svg';
+// import ArrowDownIcon from '@/public/icons/icon_arrow_down.svg';
 import OrionLogo from '@/public/images/orion-logo.webp';
 import { IconPhone, IconPhoneIncoming, IconMail } from '@tabler/icons-react';
 

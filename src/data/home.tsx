@@ -9,7 +9,7 @@ import Secure from '@/public/icons/Secure.svg';
 import { IconInfoCircle } from '@tabler/icons-react';
 
 import heroBg from '@/public/images/bg/pozharnaya-signalizaciya.webp';
-import apsImage from '@/public/images/aps.webp';
+// import apsImage from '@/public/images/aps.webp';
 import soueImage from '@/public/images/soue.webp';
 import docsImage from '@/public/images/docs.png';
 
@@ -17,9 +17,9 @@ import ohrannyeSistemy1 from '@/public/images/systems/ohrannye-sistemy-1.webp';
 import ohrannyeSistemy2 from '@/public/images/systems/ohrannye-sistemy-2.webp';
 import ohrannyeSistemy3 from '@/public/images/systems/ohrannye-sistemy-3.webp';
 
-import pozharnyeSistemy1 from '@/public/images/systems/pozharnye-sistemy-3.webp';
-import pozharnyeSistemy2 from '@/public/images/systems/pozharnye-sistemy-5.webp';
-import pozharnyeSistemy3 from '@/public/images/systems/pozharnye-sistemy-6.webp';
+import pozharnyeSistemy1 from '@/public/images/systems/pozharnye-sistemy-2.webp';
+import pozharnyeSistemy2 from '@/public/images/systems/pozharnye-sistemy-3.webp';
+import pozharnyeSistemy3 from '@/public/images/systems/pozharnye-sistemy-5.webp';
 
 import object1 from '@/public/images/objects/object-1.webp';
 import object2 from '@/public/images/objects/object-2.webp';
@@ -48,6 +48,10 @@ import dop1 from '@/public/images/dop-1.png';
 import dop2 from '@/public/images/dop-2.png';
 import dop3 from '@/public/images/dop-3.png';
 import dop4 from '@/public/images/dop-4.png';
+
+import aps1 from '@/public/images/aps-1-Photoroom.png';
+import aps2 from '@/public/images/aps-2-Photoroom.png';
+import aps3 from '@/public/images/aps-3-Photoroom.png';
 
 //
 // hero
@@ -110,29 +114,29 @@ export const numbers: any = {
       id: 1,
       head_1: '>12',
       head_2: 'лет',
-      text_1: 'опыт успешной работы',
-      text_2: 'в сфере систем безопасности',
+      text_1: 'опыт успешной работы \nв сфере систем безопасности',
+      text_2: '',
     },
     {
       id: 2,
       head_1: '>500',
       head_2: 'компаний',
-      text_1: 'выбрали нас подрядчиком',
-      text_2: 'по установке систем безопасности',
+      text_1: 'выбрали нас подрядчиком \nпо установке систем безопасности',
+      text_2: '',
     },
     {
       id: 3,
       head_1: '>900',
       head_2: 'систем',
-      text_1: 'видеонаблюдения',
-      text_2: 'установлено за это время',
+      text_1: 'видеонаблюдения \nустановлено за это время',
+      text_2: '',
     },
     {
       id: 4,
       head_1: '>800',
       head_2: 'систем',
-      text_1: 'пожарной сигнализации',
-      text_2: 'установлено за это время',
+      text_1: 'пожарной сигнализации \nустановлено за это время',
+      text_2: '',
     },
   ],
 };
@@ -194,6 +198,52 @@ export const uslugi: any = {
 };
 
 //
+// apsTypes
+//
+
+export const apsTypes: any = {
+  id: 'apsTypes',
+  wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
+  heading: {
+    sup: '',
+    main: 'Пожарная сигнализация (АПС)',
+    sub: 'Различных типов исполнения',
+  },
+  content: [
+    {
+      image: aps1,
+      alt: 'Безадресные системы',
+      title: 'Пороговые системы',
+      text: [
+        `Их еще часто называют традиционными.`,
+        `Принцип работы данного типа основан на изменение сопротивления в шлейфе пожарной сигнализации. Датчики могут находиться в двух состояниях «норма» и «пожар».`,
+        `В случае фиксации фактора пожара приёмно-контрольный прибор выдает сигнал тревоги по тому шлейфу, в котором установлен этот датчик. Не всегда можно быстро определить место сработки, т.к. в пороговых системах на одном шлейфе устанавливают 10-20 пожарных извещателей.`,
+      ],
+    },
+    {
+      image: aps2,
+      alt: 'Адресные системы',
+      title: 'Адресные системы',
+      text: [
+        `Более совершенная система контролирует состояние параметров установленных устройств, что позволяет существенно снизить вероятность ложных тревог.`,
+        `Каждому извещателю присвоен свой уникальный адрес, что позволяет приёмно-контрольному прибору отличать их и понимать конкретную причину и место неисправности.`,
+        `Решение о переходе в режим «пожар» или любое другое состояние, принимает именно контрольная панель, а не извещатель.`,
+      ],
+    },
+    {
+      image: aps3,
+      alt: 'Радиоканальные системы',
+      title: 'Радиоканальные системы',
+      text: [
+        `Также являются адресными, что позволяет достаточно точно определить место "пожара" или "неисправности". Не требует прокладки проводов, a следовательно, проще в установке.`,
+        `Главный минус такой системы — высокая стоимость оборудования и расходы в процессе эксплуатации из-за периодической замены элементов питания.`,
+        `Одним из плюсов является безопасность при минимальном влиянии на интерьер и дизайн помещения.`,
+      ],
+    },
+  ],
+};
+
+//
 // aps
 //
 
@@ -202,9 +252,9 @@ export const aps: any = {
   wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
   // heading: { sup: '', main: 'Пожарная сигнализация (АПС)', sub: '' },
   content: {
-    image: apsImage,
-    alt: 'Пожарная сигнализация (АПС)',
-    title: 'Пожарная сигнализация (АПС)',
+    image: aps2,
+    alt: 'Автоматическая пожарная сигнализация (АПС)',
+    title: 'Автоматическая пожарная сигнализация (АПС)',
     text: [
       'Это комплекс технических средств, предназначение которого обнаружить возгорание, оповестить дежурный персонал и передать сигналы управления другим пожарным системам (оповещения, дымоудаления) и инженерным системам объекта (вентиляция, отопление, электроснабжение).',
       `Виды систем пожарной сигнализации различаются по способу подключения и принципу работы. Согласно основной классификации, представлены проводные безадресные, проводные адресные и беспроводные (радиоканальные) адресные системы.`,
@@ -247,21 +297,21 @@ export const pozharnyeSistemy: any = {
   },
   content: [
     {
-      id: 3,
+      id: 1,
       image: pozharnyeSistemy1,
-      text_1: `Система противодымной вентиляции \n(дымоудаление и подпор воздуха)`,
+      text_1: `Система оповещения \nи управления эвакуацией`,
       text_2: ``,
     },
     {
-      id: 4,
-      image: pozharnyeSistemy2,
-      text_1: `Модульное пожаротушение \n(водяное, порошковое, газовое)`,
-      text_2: ``,
-    },
-    {
-      id: 6,
+      id: 2,
       image: pozharnyeSistemy3,
-      text_1: `Взаимодействие пожарных систем \nс инженерным системами здания`,
+      text_1: `Модульное пожаротушение \n(порошковое, газовое)`,
+      text_2: ``,
+    },
+    {
+      id: 3,
+      image: pozharnyeSistemy2,
+      text_1: `Автоматика противодымной \nвентиляции.`,
       text_2: ``,
     },
   ],

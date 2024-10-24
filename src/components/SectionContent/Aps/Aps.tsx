@@ -12,8 +12,8 @@ export const Aps = ({ data, className }: any): JSX.Element => {
           alt={data.alt}
           src={data.image}
           style={{
-            height: '100%',
-            objectFit: 'cover',
+            width: '100%',
+            objectFit: 'contain',
           }}
         />
       </div>

@@ -2,7 +2,6 @@
 
 import cn from 'classnames';
 import styles from './actionLight.module.scss';
-import { IconPointFilled } from '@tabler/icons-react';
 import { Button } from '@/src/components/UI/Button/Button';
 import { useCountStore } from '@/src/stores/modalStore';
 
