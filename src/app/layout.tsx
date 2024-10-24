@@ -4,12 +4,12 @@ import localFont from 'next/font/local';
 import { MantineProvider, ColorSchemeScript } from '@mantine/core';
 import { theme } from '../theme';
 
+import '@mantine/core/styles.css';
+import './globals.css';
+
 import { Footer } from '@/src/components/Footer/Footer';
 import { Header } from '@/src/components/Header/Header';
-
-import './globals.css';
-import '@mantine/core/styles.css';
-import ScrollToTop from '../components/ScrollToTop/ScrollToTop';
+import ScrollToTop from '@/src/components/ScrollToTop/ScrollToTop';
 
 const november = localFont({
   src: [
@@ -65,10 +65,10 @@ export default function RootLayout({
       <body className={november.className}>
         <MantineProvider theme={theme}>
           <div className="wrapper">
-            <Header className="header" />
+            {/* <Header className="header" /> */}
             <main className="main">{children}</main>
-            <Footer className="footer" />
-            <ScrollToTop />
+            {/* <Footer className="footer" /> */}
+            {/* <ScrollToTop /> */}
           </div>
         </MantineProvider>
       </body>

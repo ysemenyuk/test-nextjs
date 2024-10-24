@@ -1,7 +1,7 @@
 .section {
   display: grid;
-  grid-template-columns: auto minmax(992px, 1200px) auto;
-  gap: 40px;
+  grid-template-columns: auto 1200px auto;
+  // gap: 10px;
   padding: 80px 0;
   position: relative;
 
@@ -30,23 +30,32 @@
   background-color: #f8f9fa;;
 }
 
-@media only screen and (max-width: 992px) {
-  .section {
-    grid-template-columns: auto minmax(768px, 992px) auto;
-    background-color: blue;
-  }
-}
+//
 
-@media only screen and (max-width: 768px) {
-  .section {
-    grid-template-columns: auto minmax(576px, 768px) auto;
-    background-color: red;
-  }
-}
+// @media only screen and (max-width: 1200px) {
+//   .section {
+//     grid-template-columns: auto 960px auto;
+//     outline: 1px solid blue;
+//   }
+// }
+
+// @media only screen and (max-width: 992px) {
+//   .section {
+//     grid-template-columns: auto 760px auto;
+//     outline: 1px solid green;
+//   }
+// }
+
+// @media only screen and (max-width: 768px) {
+//   .section {
+//     grid-template-columns: auto 560px auto;
+//     outline: 1px solid red;
+//   }
+//  }
 
 @media only screen and (max-width: 576px) {
   .section {
-    grid-template-columns: auto minmax(360px, 576px) auto;
-    background-color: green;
+    grid-template-columns: auto minmax(360px, 540px) auto;
+    outline: 1px solid cornflowerblue;
   }
 }

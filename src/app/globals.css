@@ -22,6 +22,11 @@
   --gray-800: #1b1a19;
   --gray-900: #11100f;
 
+  font-size: 20px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: normal;
+
 }
 
 * {
@@ -40,7 +45,7 @@ body {
 body {
   background: var(--background);
   color: var(--foreground);
-  
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -48,22 +53,17 @@ body {
 .wrapper {
   min-height: 100vh;
   min-width: 100%;
-  font-size: 16px;
-  line-height: normal;
-  font-weight: 400;
-  letter-spacing: normal;
-  color: var(--black);
-
   display: grid;
   grid-template-rows: auto 1fr auto;
 
   .header {
     /* outline: 1px solid black; */
+    /* background-color: #797775; */
     /* position: sticky; */
   }
   
   .main {
-    margin-top: -136px;
+    /* margin-top: -136px; */
     /* outline: 1px solid black; */
   }
   
@@ -85,6 +85,18 @@ ol, ul {
 
 button {
   font-family: inherit;
-  font-size: 1em;
+  font-size: 1rem;
   line-height: 1rem;
+}
+
+
+@media only screen and (max-width: 576px) {
+  :root {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: normal;
+
+    outline: 1px solid cornflowerblue;
+  }
 }

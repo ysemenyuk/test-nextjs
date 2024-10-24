@@ -27,7 +27,7 @@ export default function Home() {
     [Aps, data.aps],
     [Soue, data.soue],
     [Systems, data.pozharnyeSistemy, styles.gray_1],
-    // [Systems, data.ohrannyeSistemy, styles.gray_1],
+    [Systems, data.ohrannyeSistemy, styles.gray_1],
     [Objects, data.objects],
     [ActionDark, data.actionDark, styles.dark_form],
     [WhyUs, data.whyUs],
@@ -42,7 +42,7 @@ export default function Home() {
 
   return (
     <>
-      <Hero data={data.hero} />
+      {/* <Hero data={data.hero} /> */}
 
       {sections.map(([Content, data, ...classNames]) => {
         const [wrapper, heading, content] = classNames;
