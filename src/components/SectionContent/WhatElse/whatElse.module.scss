@@ -23,3 +23,31 @@
     }
 }
 
+// media
+
+@media (576px < width <= 1220px) {
+    .container {
+        gap: 40px;
+    }
+
+    .item {
+        flex-direction: column;
+    }
+}
+
+// media
+
+@media (width <= 576px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .item {
+        flex-direction: column;
+
+        .text {
+            font-size: 16px;
+        }
+    }
+}

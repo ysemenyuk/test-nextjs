@@ -5,7 +5,12 @@ import Image from 'next/image';
 const Item = ({ item }: any): JSX.Element => (
   <div key={item.id} className={cn(styles.item)}>
     <div className={cn(styles.image_wrapper)}>
-      <Image height={180} alt={item.text_1} src={item.image} />
+      <Image
+        height={180}
+        alt={item.text_1}
+        src={item.image}
+        className={cn(styles.image)}
+      />
     </div>
     <div className={cn(styles.text_wrapper)}>
       <h4>{item.text_1}</h4>

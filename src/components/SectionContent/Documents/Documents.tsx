@@ -18,8 +18,12 @@ const Item = ({ item }: any): JSX.Element => (
 export const Documents = ({ data, className }: any): JSX.Element => {
   return (
     <div className={cn(styles.container, className)}>
-      <div className={cn(styles.image)}>
-        <Image alt={data.altImage} src={data.image} />
+      <div className={cn(styles.image_wrapper)}>
+        <Image
+          alt={data.altImage}
+          src={data.image}
+          className={cn(styles.image)}
+        />
       </div>
       <ul className={cn(styles.list)}>
         {data.list.map((item: any) => (

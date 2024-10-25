@@ -9,10 +9,10 @@
 .item {
     display: flex;
     flex-direction: column;
+    gap: 16px;
 
     .icon_wrapper {
         display: flex;
-        margin-bottom: 16px;
     }
 
     .text_wrapper {
@@ -36,3 +36,23 @@
     }
 }
 
+// media
+
+@media (576px < width <= 1220px) {
+    .container {
+        column-gap: 40px;
+    }
+}
+
+// media
+
+@media (width <= 576px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .item {
+        flex-direction: row;
+    }
+}

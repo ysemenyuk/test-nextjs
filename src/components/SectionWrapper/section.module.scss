@@ -1,7 +1,6 @@
 .section {
   display: grid;
-  grid-template-columns: auto 1200px auto;
-  // gap: 10px;
+  grid-template-columns: auto 1180px auto;
   padding: 80px 0;
   position: relative;
 
@@ -15,7 +14,7 @@
   display: grid;
   gap: 60px;
 
-  // outline: 1px solid green;
+  outline: 1px solid green;
 }
 
 .image {
@@ -32,30 +31,24 @@
 
 //
 
-// @media only screen and (max-width: 1200px) {
-//   .section {
-//     grid-template-columns: auto 960px auto;
-//     outline: 1px solid blue;
-//   }
-// }
-
-// @media only screen and (max-width: 992px) {
-//   .section {
-//     grid-template-columns: auto 760px auto;
-//     outline: 1px solid green;
-//   }
-// }
-
-// @media only screen and (max-width: 768px) {
-//   .section {
-//     grid-template-columns: auto 560px auto;
-//     outline: 1px solid red;
-//   }
-//  }
-
-@media only screen and (max-width: 576px) {
+@media (576px < width <= 1220px) {
   .section {
-    grid-template-columns: auto minmax(360px, 540px) auto;
+    grid-template-columns: auto 960px auto;
     outline: 1px solid cornflowerblue;
+  }
+}
+
+//
+
+@media (width <= 576px) {
+  .section {
+    grid-template-columns: auto minmax(320px, 460px) auto;
+    padding: 40px 0;
+
+    // outline: 1px solid cornflowerblue;
+  }
+
+  .container {
+    gap: 30px;
   }
 }

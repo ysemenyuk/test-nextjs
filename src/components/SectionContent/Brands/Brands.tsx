@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const Item = ({ item }: any): JSX.Element => (
   <div key={item.id} className={cn(styles.item)}>
-    <Image alt={item.text_1} src={item.image} width={180} />
+    <Image alt={item.text_1} src={item.image} className={cn(styles.image)} />
   </div>
 );
 

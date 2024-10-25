@@ -5,7 +5,7 @@
 
 .top_bar {
   display: grid;
-  grid-template-columns: auto minmax(min-content, 1180px) auto;
+  grid-template-columns: auto 1180px auto;
   gap: 20px;
 }
 
@@ -69,6 +69,14 @@
   }
 }
 
+//
+
+@media (width <= 1220px) {
+  .top_bar {
+    grid-template-columns: auto 960px auto;
+  }
+}
+
 
 
 
@@ -124,5 +132,13 @@
     display: flex;
     align-items: center;
     gap: 4px;
+  }
+}
+
+//
+
+@media (width <= 1220px) {
+  .main_bar {
+    grid-template-columns: auto 960px auto;
   }
 }

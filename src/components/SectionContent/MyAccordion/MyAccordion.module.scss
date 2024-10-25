@@ -5,6 +5,8 @@
 
 .label {
   font-weight: 500;
+  font-size: 16px;
+  line-height: normal;
 }
 
 .p {
@@ -13,5 +15,15 @@
   .tab {
     display: inline-block;
     margin-left: 40px;
+  }
+}
+
+// media
+
+@media (width <= 576px) {
+  .label {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: normal;
   }
 }

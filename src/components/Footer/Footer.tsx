@@ -29,10 +29,6 @@ export const Footer = ({ className }: any): JSX.Element => {
       <div className={styles.widgets}>
         <div className={styles.widgets_container}>
           <div>
-            <h4>{company.title}</h4>
-            <p>{company.content}</p>
-          </div>
-          <div>
             <h4>{uslugi.title}</h4>
             <ul>{uslugiContent}</ul>
           </div>
@@ -43,6 +39,10 @@ export const Footer = ({ className }: any): JSX.Element => {
           <div>
             <h4>{contacts.title}</h4>
             <ul>{contactsContent}</ul>
+          </div>
+          <div>
+            <h4>{company.title}</h4>
+            <p>{company.content}</p>
           </div>
         </div>
       </div>
