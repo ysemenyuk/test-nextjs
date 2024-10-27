@@ -12,6 +12,7 @@ import heroBg from '@/public/images/bg/pozharnaya-signalizaciya.webp';
 // import apsImage from '@/public/images/aps.webp';
 import soueImage from '@/public/images/soue.webp';
 import docsImage from '@/public/images/docs.png';
+import apsMobile from '@/public/images/aps-mobile.png';
 
 import ohrannyeSistemy1 from '@/public/images/systems/ohrannye-sistemy-1.webp';
 import ohrannyeSistemy2 from '@/public/images/systems/ohrannye-sistemy-2.webp';
@@ -62,6 +63,7 @@ export const hero: any = {
   bgImage: heroBg,
   altBgImage: 'Пожарная сигнализация',
   heading_sup: ['Проектирование', 'Монтаж', 'Обслуживание'],
+  heading_sup_mobile: 'Монтаж и Обслуживание',
   heading_main: 'Пожарная сигнализация',
   heading_sub: 'в Москве и Московской области',
   text: [
@@ -96,7 +98,7 @@ export const actionDark: any = {
 export const actionLight: any = {
   id: 'actionLigt',
   content: {
-    title: 'Нужна консультация? Мы перезвоним!',
+    title: 'Нужна консультация? \nМы перезвоним!',
     text: 'Подробно ответим на любые вопросы о наших услугах и условиях работы.',
     btnText: 'Отправить заявку',
   },
@@ -167,7 +169,7 @@ export const alert: any = {
 
 export const uslugi: any = {
   id: 'uslugi',
-  wrapper: { bgColor: '#f8f9fa', bgImage: '', altBgImage: '' },
+  wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
   heading: { sup: '', main: 'Мы предлагаем следующие услуги', sub: '' },
   content: [
     {
@@ -206,8 +208,8 @@ export const apsTypes: any = {
   wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
   heading: {
     sup: '',
-    main: 'Пожарная сигнализация (АПС)',
-    sub: 'Различных типов исполнения',
+    main: 'Типы исполнения АПС',
+    sub: 'Работаем со всеми видами и производителями оборудования',
   },
   content: [
     {
@@ -253,6 +255,7 @@ export const aps: any = {
   // heading: { sup: '', main: 'Пожарная сигнализация (АПС)', sub: '' },
   content: {
     image: aps2,
+    imageMobile: apsMobile,
     alt: 'Автоматическая пожарная сигнализация (АПС)',
     title: 'Автоматическая пожарная сигнализация (АПС)',
     text: [
@@ -521,32 +524,29 @@ export const docs: any = {
       {
         id: 1,
         icon: '',
-        text_1: `Действующая лицензия МЧС.`,
-        text_2: ``,
+        text: `Действующая лицензия МЧС.`,
       },
       {
         id: 2,
         icon: '',
-        text_1: `Действующая выписка из реестра СРО.`,
-        text_2: ``,
+        text: `Действующая выписка из реестра СРО.`,
       },
       {
         id: 3,
         icon: '',
-        text_1: `Выписка из реестра МЧС проектировщиков.`,
-        text_2: ``,
+        text: `Выписка из реестра МЧС проектировщиков.`,
       },
       {
         id: 4,
         icon: '',
-        text_1: `Сертификаты повышения квалификации в области монтажа`,
-        text_2: `и обслуживания систем пожарной безопасности.`,
+        text: `Сертификаты повышения квалификации в области монтажа 
+                и обслуживания систем пожарной безопасности.`,
       },
       {
         id: 5,
         icon: '',
-        text_1: `Сертификаты обучения по установке и настройке`,
-        text_2: `оборудования разных производителей (Болид, Рубеж, Стрелец).`,
+        text: `Сертификаты обучения по установке и настройке 
+                оборудования разных производителей (Болид, Рубеж, Стрелец).`,
       },
     ],
   },

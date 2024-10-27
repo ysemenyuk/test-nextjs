@@ -55,20 +55,12 @@
     }
 
     .item {
-        flex-direction: row;
         padding: 6px;
         gap: 6px;
-
-        .text_wrapper {
-            h4 {
-                font-size: 15px;
-                text-align: left;
-            }
-        }
     }
 
     .image {
-        height: 110px;
+        height: 120px;
         width: auto;
     }
 }

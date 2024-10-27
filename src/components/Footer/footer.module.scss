@@ -10,7 +10,7 @@
     background: rgba(0, 0, 0, .1);
     border-top: 1px solid hsla(0, 0%, 100%, .1);
     font-size: 18px;
-    line-height: 22px;
+    line-height: normal;
 }
 
 //
@@ -40,7 +40,7 @@
 
   ul {
     display: grid;
-    gap: 4px;
+    gap: 6px;
   }
 
   .link {
@@ -94,6 +94,10 @@
 // media
 
 @media (width <= 576px) {
+  .action {
+    font-size: 16px;
+  }
+
   .widgets {
     grid-template-columns: auto minmax(360px, 460px) auto;
   }
@@ -101,6 +105,7 @@
   .widgets_container {
     grid-template-columns: 1fr;
     gap: 10px;
+    justify-self: center;
   }
 
   .copyrigts {
@@ -111,6 +116,10 @@
     grid-template-columns: 1fr;
     padding: 20px;
     text-align: center;
+
+    span {
+      white-space: pre-line;
+    }
   }
 }
 

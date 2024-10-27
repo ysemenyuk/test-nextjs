@@ -9,8 +9,7 @@ const Item = ({ item }: any): JSX.Element => (
       <IconClipboardText size={16} />
     </div>
     <div className={cn(styles.text)}>
-      <p>{item.text_1}</p>
-      <p>{item.text_2}</p>
+      <p>{item.text}</p>
     </div>
   </li>
 );

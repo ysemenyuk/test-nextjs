@@ -11,8 +11,8 @@ export const ActionLight = ({ data, className }: any): JSX.Element => {
   return (
     <div className={cn(className, styles.wrapper)}>
       <div className={styles.title_wrapper}>
-        <div className={styles.title}>{data.title}</div>
-        <div className={styles.text}>{data.text}</div>
+        <h4 className={styles.title}>{data.title}</h4>
+        <span className={styles.text}>{data.text}</span>
       </div>
       <Button rounded onClick={open} className={styles.btn}>
         {data.btnText}

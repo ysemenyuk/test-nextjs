@@ -1,7 +1,7 @@
 .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
+    gap: 60px;
 
     // outline: 1px solid blue;
 }
@@ -17,9 +17,8 @@
     }
 
     .text {
-        font-size: 18px;
+        font-size: 16px;
         line-height: normal;
-        // margin: 12px 0;
     }
 }
 
@@ -27,7 +26,7 @@
 
 @media (576px < width <= 1220px) {
     .container {
-        gap: 40px;
+        gap: 50px;
     }
 
     .item {
@@ -40,14 +39,10 @@
 @media (width <= 576px) {
     .container {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 40px;
     }
 
     .item {
         flex-direction: column;
-
-        .text {
-            font-size: 16px;
-        }
     }
 }

@@ -29,32 +29,26 @@ export const Hero = ({ data, className }: any): JSX.Element => {
             objectFit: 'cover',
             position: 'absolute',
             zIndex: '-1',
-
-            // objectPosition: '50% 0',
-            // left: '50%',
-            // transform: 'translate(-50%)',
           }}
         />
       )}
 
       <div className={cn(styles.container)}>
-        {matches && <Breadcrumbs />}
+        <Breadcrumbs className={styles.breadcrumbs} />
 
         <div className={cn(styles.heading_container)}>
           <div className={cn(styles.heading)}>
-            {matches ? (
-              <div className={cn(styles.sup)}>
-                <span>{supText1}</span>
-                <IconPointFilled color={'#ff6600'} />
-                <span>{supText2}</span>
-                <IconPointFilled color={'#ff6600'} />
-                <span>{supText3}</span>
-              </div>
-            ) : (
-              <div className={cn(styles.sup)}></div>
-            )}
-
+            <div className={cn(styles.sup)}>
+              <span>{supText1}</span>
+              <IconPointFilled color={'#ff6600'} />
+              <span>{supText2}</span>
+              <IconPointFilled color={'#ff6600'} />
+              <span>{supText3}</span>
+            </div>
             <h1>{data.heading_main}</h1>
+            <span className={cn(styles.sub_mobile)}>
+              {data.heading_sup_mobile}
+            </span>
             <span className={styles.sub}>{data.heading_sub}</span>
           </div>
           <hr />

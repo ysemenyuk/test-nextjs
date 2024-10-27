@@ -10,7 +10,6 @@ import { Objects } from '@/src/components/SectionContent/Objects/Objects';
 import { WhyUs } from '@/src/components/SectionContent/WhyUs/WhyUs';
 import { MyAlert } from '../components/SectionContent/Alert/Alert';
 import { Aps } from '../components/SectionContent/Aps/Aps';
-// import { Soue } from '../components/SectionContent/Soue/Soue';
 import { MyAccordion } from '../components/SectionContent/MyAccordion/MyAccordion';
 import { YouGet } from '../components/SectionContent/YouGet/YouGet';
 import { Brands } from '../components/SectionContent/Brands/Brands';
@@ -19,15 +18,14 @@ import { ActionDark } from '../components/SectionContent/ActionDark/ActionDark';
 import { CallBackModal } from '../components/Modals/CallBackModal/CallBackModal';
 import { ActionLight } from '../components/SectionContent/ActionLight/ActionLight';
 import { WhatElse } from '../components/SectionContent/WhatElse/WhatElse';
-// import { ApsTypes } from '../components/SectionContent/ApsTypes/ApsTypes';
+import { ApsTypes } from '../components/SectionContent/ApsTypes/ApsTypes';
 
 export default function Home() {
   const sections: any[] = [
     [Numbers, data.numbers],
-    [Uslugi, data.uslugi],
-    // [ApsTypes, data.apsTypes],
+    [Uslugi, data.uslugi, styles.gray_1],
     [Aps, data.aps],
-    // [Soue, data.soue],
+    [ApsTypes, data.apsTypes],
     [Systems, data.pozharnyeSistemy, styles.gray_1],
     [Systems, data.ohrannyeSistemy, styles.gray_1],
     [Objects, data.objects],

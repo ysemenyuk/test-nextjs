@@ -6,8 +6,10 @@ import { IconExternalLink } from '@tabler/icons-react';
 
 export const footer: any = {
   id: 'footer',
-  top_text: 'Мы будем рады видеть Вас в числе наших заказчиков!',
-  copy_text: '2012 - 2024 ООО "Орион" Все права защищены.',
+  top_text: `Мы будем рады видеть Вас 
+             в числе наших заказчиков!`,
+  copy_text: `2012 - 2024 ООО "Орион" 
+              Все права защищены.`,
   privacy: { text: 'Политика конфеденциальности', href: '' },
   company: {
     title: `ООО "Орион"`,

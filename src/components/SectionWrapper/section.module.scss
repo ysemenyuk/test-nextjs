@@ -42,13 +42,13 @@
 
 @media (width <= 576px) {
   .section {
-    grid-template-columns: auto minmax(320px, 460px) auto;
-    padding: 40px 0;
+    grid-template-columns: auto minmax(360px, 460px) auto;
+    padding: 50px 0;
 
     // outline: 1px solid cornflowerblue;
   }
 
   .container {
-    gap: 30px;
+    gap: 50px;
   }
 }

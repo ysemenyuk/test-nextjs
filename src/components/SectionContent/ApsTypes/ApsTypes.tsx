@@ -1,6 +1,7 @@
 import cn from 'classnames';
 import styles from './apsTypes.module.scss';
 import Image from 'next/image';
+import { Spoiler } from '@mantine/core';
 
 const Item = ({ item }: any): JSX.Element => (
   <div key={item.id} className={cn(styles.item)}>
@@ -8,11 +9,18 @@ const Item = ({ item }: any): JSX.Element => (
     <div className={cn(styles.text_wrapper)}>
       <h4>{item.title}</h4>
       <div className={cn(styles.text)}>
-        {item.text.map((text: string, id: number) => (
+        {/* {item.text.map((text: string, id: number) => (
           <p key={id} className={styles.p}>
             {text}
           </p>
-        ))}
+        ))} */}
+        <Spoiler showLabel="Подробнее" hideLabel="Скрыть">
+          {item.text.map((text: string, id: number) => (
+            <p key={id} className={styles.p}>
+              {text}
+            </p>
+          ))}
+        </Spoiler>
       </div>
     </div>
   </div>
