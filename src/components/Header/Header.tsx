@@ -16,7 +16,7 @@ import { header } from '@/src/data/header';
 import { useDisclosure } from '@mantine/hooks';
 import { Drawer } from '@mantine/core';
 
-const { messengers, menu, menuMobile, logo, contacts, leftText } = header;
+const { messengers, menu, logo, contacts, leftText } = header;
 const { adress, phone1, phone2, mail, callBack } = contacts;
 
 export const Header = ({ className }: any): JSX.Element => {
