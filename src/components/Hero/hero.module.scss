@@ -13,6 +13,7 @@
     padding: 0 20px;
     display: grid;
     margin-top: 100px;
+    z-index: 1;
 
     outline: 1px solid green;
 }
@@ -78,10 +79,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .bg_color {
   background: linear-gradient(0deg, #525252 0%, #676666 50%, #525252 100%);
+}
+
+.hoverCard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 //

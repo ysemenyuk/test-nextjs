@@ -12,7 +12,7 @@ export const Footer = ({ className }: any): JSX.Element => {
   ));
 
   const systemsContent = systems.content.map((item: any) => (
-    <li key={item}>
+    <li key={item.text}>
       <Link href={item.href} className={styles.link}>
         {item.text} {item.icon}
       </Link>

@@ -19,47 +19,52 @@ export const header: any = {
   leftText: 'Работаем с 2012 г. Москва и МО.',
   menu: [
     { text: 'О компании', href: '/', icon: '' },
-    { text: 'Услуги', href: '/', icon: <ArrowDownIcon /> },
+    {
+      text: 'Услуги',
+      href: '/',
+      icon: <ArrowDownIcon />,
+      children: [
+        {
+          text: 'Охранные системы',
+          href: '/',
+          icon: '',
+          children: [
+            { text: 'Видеонаблюдение', href: '/', icon: '' },
+            { text: 'Контроль доступа', href: '/', icon: '' },
+            { text: 'Охранная сигнализация', href: '/', icon: '' },
+          ],
+        },
+        {
+          text: 'Пожарные системы',
+          href: '/',
+          icon: '',
+          children: [
+            { text: 'Пожарная сигнализация', href: '/', icon: '' },
+            { text: 'Системы оповещения', href: '/', icon: '' },
+            { text: 'Системы пожаротушения', href: '/', icon: '' },
+          ],
+        },
+        {
+          text: 'Пожарная безопасность',
+          href: '',
+          icon: '',
+          children: [
+            { text: 'Планы эвакуации', href: '/', icon: '' },
+            { text: 'Проверка пожарных кранов', href: '/', icon: '' },
+            { text: 'Перекатка пожарных рукавов', href: '/', icon: '' },
+            { text: 'Перезарядка огнетушителей', href: '/', icon: '' },
+            { text: 'Испытание пожарных лестниц', href: '/', icon: '' },
+            { text: 'Продажа огнетушителей', href: '/', icon: '' },
+          ],
+        },
+      ],
+    },
     { text: 'Магазин', href: 'https://shop.orionsb.ru/', icon: <LinkIcon /> },
     // { text: 'Решения', href: '', icon: '' },
     // { text: 'Расчеты', href: '', icon: '' },
     { text: 'Контакты', href: '', icon: '' },
   ],
-  menuUslugi: [
-    {
-      text: 'Охранные системы',
-      href: '/',
-      icon: '',
-      children: [
-        { text: 'Видеонаблюдение', href: '/', icon: '' },
-        { text: 'Контроль доступа', href: '/', icon: '' },
-        { text: 'Охранная сигнализация', href: '/', icon: '' },
-      ],
-    },
-    {
-      text: 'Пожарные системы',
-      href: '/',
-      icon: '',
-      children: [
-        { text: 'Пожарная сигнализация', href: '/', icon: '' },
-        { text: 'Системы оповещения', href: '/', icon: '' },
-        { text: 'Системы пожаротушения', href: '/', icon: '' },
-      ],
-    },
-    {
-      text: 'Пожарная безопасность',
-      href: '',
-      icon: '',
-      children: [
-        { text: 'Планы эвакуации', href: '/', icon: '' },
-        { text: 'Проверка пожарных кранов', href: '/', icon: '' },
-        { text: 'Перекатка пожарных рукавов', href: '/', icon: '' },
-        { text: 'Перезарядка огнетушителей', href: '/', icon: '' },
-        { text: 'Испытание пожарных лестниц', href: '/', icon: '' },
-        { text: 'Продажа огнетушителей', href: '/', icon: '' },
-      ],
-    },
-  ],
+
   contacts: {
     callBack: {
       text: 'Перезвонить',

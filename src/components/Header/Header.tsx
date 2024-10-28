@@ -15,16 +15,18 @@ import { Button } from '../UI/Button/Button';
 import { header } from '@/src/data/header';
 import { useDisclosure } from '@mantine/hooks';
 import { Drawer } from '@mantine/core';
+import { MenuItem } from './MenuItem';
 
 const { messengers, menu, logo, contacts, leftText } = header;
 const { adress, phone1, phone2, mail, callBack } = contacts;
 
 export const Header = ({ className }: any): JSX.Element => {
   const { open } = useCountStore();
+
   const [isOpenMenu, menuActions] = useDisclosure(false);
   const [isOpenContacts, contactsActions] = useDisclosure(false);
 
-  const messengersItems = messengers.map((item: any) => (
+  const mainMessengers = messengers.map((item: any) => (
     <li key={item.name}>
       <Link className={styles.messengers_item} href={item.href}>
         {item.icon}
@@ -32,7 +34,19 @@ export const Header = ({ className }: any): JSX.Element => {
     </li>
   ));
 
-  const menuItems = menu.map((item: any) => (
+  const mobileMessengers = messengers.map((item: any) => (
+    <li key={item.name}>
+      <Link className={styles.messengers_item} href={item.href}>
+        {item.icon}
+      </Link>
+    </li>
+  ));
+
+  const mainMenu = menu.map((item: any) => (
+    <MenuItem key={item.text} item={item} />
+  ));
+
+  const mobileMenu = menu.map((item: any) => (
     <li key={item.text}>
       <Link className={styles.menu_item} href={item.href}>
         {item.text} {item.icon}
@@ -65,7 +79,7 @@ export const Header = ({ className }: any): JSX.Element => {
                   {mail.text}
                 </Link>
               </div>
-              <ul className={styles.messengers}>{messengersItems}</ul>
+              <ul className={styles.messengers}>{mainMessengers}</ul>
             </div>
           </div>
         </div>
@@ -88,7 +102,7 @@ export const Header = ({ className }: any): JSX.Element => {
               </Link>
             </div>
             <div className={styles.menu_container}>
-              <ul className={styles.menu}>{menuItems}</ul>
+              <ul className={styles.menu}>{mainMenu}</ul>
             </div>
             <div className={styles.btn_wrapper}>
               <button onClick={contactsActions.open} className={styles.btn}>
@@ -101,7 +115,7 @@ export const Header = ({ className }: any): JSX.Element => {
 
       <Drawer size="xs" opened={isOpenMenu} onClose={menuActions.close}>
         <div className={styles.mobileMenu_container}>
-          <ul className={styles.mobileMenu}>{menuItems}</ul>
+          <ul className={styles.mobileMenu}>{mobileMenu}</ul>
         </div>
       </Drawer>
 
@@ -129,7 +143,7 @@ export const Header = ({ className }: any): JSX.Element => {
           </div>
           <div className={styles.mobileContacts_adress}>{adress}</div>
           <ul className={styles.mobileContacts_messengers}>
-            {messengersItems}
+            {mobileMessengers}
           </ul>
         </div>
       </Drawer>

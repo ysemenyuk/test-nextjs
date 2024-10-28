@@ -4,6 +4,38 @@
     // position: sticky;
     // top: -56px
 }
+
+.megaMenu {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px 30px;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.05);
+    font-size: 14px;
+    line-height: normal;
+
+    width: 100%;
+    top: 100%;
+    left: 0;
+}
+
+.submenu {
+    display: grid;
+    gap: 8px;
+
+    h4 {
+        margin: 0;
+    }
+}
+
+.submenu_list {
+    display: grid;
+    gap: 8px;
+    padding-left: 16px;
+    list-style: disc;
+}
   
 .top_bar {
     display: grid;
@@ -24,7 +56,7 @@
         align-items: center;
 
         color: #FFF;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 24px;
 
         min-width: 214px;
@@ -44,19 +76,19 @@
     display: flex;
     gap: 4px;
 
-.contacts_item {
-    display: flex;
-    gap: 6px;
-    align-items: center;
-    padding: 0 12px;
-    border-radius: 24px;
+    .contacts_item {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        padding: 0 12px;
+        border-radius: 24px;
 
-    svg {
-        height: 20px;
-        width: 20px;
-        color: rgb(255 255 255 / 50%);
+        svg {
+            height: 20px;
+            width: 20px;
+            color: rgb(255 255 255 / 50%);
+        }
     }
-}
 
 }
   
@@ -97,6 +129,7 @@
 }
   
 .main_bar_container {
+    position: relative;
     grid-column: 2;
     display: flex;
     gap: 18px;
