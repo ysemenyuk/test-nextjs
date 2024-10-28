@@ -1,28 +1,27 @@
 import TelegramIcon from '@/public/icons/icon_telegram.svg';
 import WhatsappIcon from '@/public/icons/icon_whatsapp.svg';
 import VkIcon from '@/public/icons/icon_vk.svg';
-import LinkIcon from '@/public/icons/icon_external_link.svg';
-import ArrowDownIcon from '@/public/icons/icon_arrow_down.svg';
 import OrionLogo from '@/public/images/orion-logo.webp';
-import { IconPhone, IconPhoneIncoming, IconMail } from '@tabler/icons-react';
+import {
+  IconPhone,
+  IconPhoneIncoming,
+  IconMail,
+  IconChevronDown,
+  IconExternalLink,
+} from '@tabler/icons-react';
 
-//
-// header
-//
-
-export const header: any = {
-  id: 'header',
+export const main: any = {
   logo: {
     src: OrionLogo,
     alt: 'Орион',
   },
   leftText: 'Работаем с 2012 г. Москва и МО.',
-  menu: [
-    { text: 'О компании', href: '/', icon: '' },
+  mainMenu: [
+    { text: 'О компании', href: '/', target: '_self', icon: '' },
     {
       text: 'Услуги',
       href: '/',
-      icon: <ArrowDownIcon />,
+      icon: <IconChevronDown />,
       children: [
         {
           text: 'Охранные системы',
@@ -59,13 +58,19 @@ export const header: any = {
         },
       ],
     },
-    { text: 'Магазин', href: 'https://shop.orionsb.ru/', icon: <LinkIcon /> },
+    {
+      text: 'Магазин',
+      href: 'https://shop.orionsb.ru/',
+      target: '_blank',
+      icon: <IconExternalLink />,
+    },
     // { text: 'Решения', href: '', icon: '' },
     // { text: 'Расчеты', href: '', icon: '' },
     { text: 'Контакты', href: '', icon: '' },
   ],
 
   contacts: {
+    title: 'Контакты',
     callBack: {
       text: 'Перезвонить',
       icon: <IconPhoneIncoming />,
@@ -85,7 +90,7 @@ export const header: any = {
       href: 'mailto:info@orionsb.ru',
       icon: <IconMail />,
     },
-    adress: `124460, г.Москва, \nул.Консруктора Гуськова, 14с2`,
+    adress: `124460, г.Москва, \nул.Консруктора Гуськова, \nд.14, стр.2, офис 2.27`,
   },
   messengers: [
     {
@@ -104,4 +109,46 @@ export const header: any = {
       icon: <VkIcon />,
     },
   ],
+
+  footerSlogan: `Мы будем рады видеть Вас в числе наших заказчиков!`,
+  copyText: `2012 - 2024 ООО "Орион" © Все права защищены.`,
+  privacy: { text: 'Политика конфеденциальности', href: '' },
+  company: {
+    title: `ООО "Орион"`,
+    content: `Мы рады предложить Вам услуги 
+              по установке и обслуживанию 
+              слаботочных систем и автоматики. 
+              Работаем в Москве и МО с 2012 года.`,
+  },
+  uslugiMenu: {
+    title: 'Услуги',
+    content: [
+      { text: 'Проектирование', href: '', icon: '' },
+      { text: 'Монтаж', href: '', icon: '' },
+      { text: 'Обслуживание', href: '', icon: '' },
+    ],
+  },
+  systemsMenu: {
+    title: 'Системы',
+    content: [
+      {
+        text: 'Пожарные системы',
+        href: 'https://orionsb.ru/pozharnye-sistemy/',
+        target: '_blank',
+        icon: '',
+      },
+      {
+        text: 'Видеонаблюдение',
+        href: 'https://orionsb.ru/videonablyudenie/',
+        target: '_blank',
+        icon: '',
+      },
+      {
+        text: 'Контроль доступа',
+        href: 'https://orionsb.ru/kontrol-dostupa/',
+        target: '_blank',
+        icon: '',
+      },
+    ],
+  },
 };

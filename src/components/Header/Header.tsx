@@ -12,12 +12,12 @@ import {
 } from '@tabler/icons-react';
 import { useCountStore } from '@/src/stores/modalStore';
 import { Button } from '../UI/Button/Button';
-import { header } from '@/src/data/header';
+import { main } from '@/src/data/main';
 import { useDisclosure } from '@mantine/hooks';
 import { Drawer } from '@mantine/core';
-import { MenuItem } from './MenuItem';
+import { MenuItem, MenuItemWithSubmenu } from './MenuItem';
 
-const { messengers, menu, logo, contacts, leftText } = header;
+const { messengers, mainMenu, logo, contacts, leftText } = main;
 const { adress, phone1, phone2, mail, callBack } = contacts;
 
 export const Header = ({ className }: any): JSX.Element => {
@@ -42,11 +42,14 @@ export const Header = ({ className }: any): JSX.Element => {
     </li>
   ));
 
-  const mainMenu = menu.map((item: any) => (
-    <MenuItem key={item.text} item={item} />
-  ));
+  const headerMenu = mainMenu.map((item: any) => {
+    if (item.children) {
+      return <MenuItemWithSubmenu key={item.text} item={item} />;
+    }
+    return <MenuItem key={item.text} item={item} />;
+  });
 
-  const mobileMenu = menu.map((item: any) => (
+  const mobileMenu = mainMenu.map((item: any) => (
     <li key={item.text}>
       <Link className={styles.menu_item} href={item.href}>
         {item.text} {item.icon}
@@ -62,14 +65,6 @@ export const Header = ({ className }: any): JSX.Element => {
             <div className={styles.left}>{leftText}</div>
             <div className={styles.rigt}>
               <div className={styles.contacts}>
-                <Button
-                  link
-                  className={cn(styles.contacts_item)}
-                  onClick={open}
-                >
-                  <IconPhoneIncoming />
-                  {callBack.text}
-                </Button>
                 <Link className={cn(styles.contacts_item)} href={phone1.href}>
                   <IconPhone />
                   {phone1.text}
@@ -78,6 +73,14 @@ export const Header = ({ className }: any): JSX.Element => {
                   <IconMail />
                   {mail.text}
                 </Link>
+                <Button
+                  link
+                  className={cn(styles.contacts_item_btn)}
+                  onClick={open}
+                >
+                  <IconPhoneIncoming />
+                  {callBack.text}
+                </Button>
               </div>
               <ul className={styles.messengers}>{mainMessengers}</ul>
             </div>
@@ -101,9 +104,9 @@ export const Header = ({ className }: any): JSX.Element => {
                 />
               </Link>
             </div>
-            <div className={styles.menu_container}>
-              <ul className={styles.menu}>{mainMenu}</ul>
-            </div>
+            <nav className={styles.menu_container}>
+              <ul className={styles.menu}>{headerMenu}</ul>
+            </nav>
             <div className={styles.btn_wrapper}>
               <button onClick={contactsActions.open} className={styles.btn}>
                 <IconPhone />

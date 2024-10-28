@@ -1,21 +1,24 @@
 import cn from 'classnames';
 import styles from './systems.module.scss';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Item = ({ item }: any): JSX.Element => (
   <div key={item.id} className={cn(styles.item)}>
-    <div className={cn(styles.image_wrapper)}>
-      <Image
-        height={180}
-        alt={item.text_1}
-        src={item.image}
-        className={cn(styles.image)}
-      />
-    </div>
-    <div className={cn(styles.text_wrapper)}>
-      <h4>{item.text_1}</h4>
-      {/* <p>{item.text_2}</p> */}
-    </div>
+    <Link href={item.href} target={item.target}>
+      <div className={cn(styles.image_wrapper)}>
+        <Image
+          height={180}
+          alt={item.title}
+          src={item.image}
+          className={cn(styles.image)}
+        />
+      </div>
+      <div className={cn(styles.text_wrapper)}>
+        <h4>{item.title}</h4>
+        {/* <p>{item.text}</p> */}
+      </div>
+    </Link>
   </div>
 );
 

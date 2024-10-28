@@ -28,7 +28,7 @@
 .widgets_container {
   grid-column: 2;
   display: grid;
-  grid-template-columns: repeat(4, auto);
+  grid-template-columns: repeat(4, 1fr);
   gap: 50px;
   padding: 0 20px;
   white-space: pre-line;
@@ -36,6 +36,7 @@
 
   h4 {
     color: var(--white);
+    margin: 12px 0;
   }
 
   ul {
@@ -52,6 +53,44 @@
       height: 16px;
     }
   }
+
+  .link:hover {
+    color: #fff;
+  }
+
+  .contacts {
+    display: grid;
+    gap: 6px;
+  }
+
+  .contacts_item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    svg {
+      padding: 2px
+    }
+  }
+
+  .contacts_item:hover {
+    color: #fff;
+
+    svg {
+      color: #cccccc;
+    }
+  }
+
+  .company {
+    display: grid;
+    gap: 12px;
+    margin-top: 48px;
+  }
+
+  .messengers {
+    display: flex;
+    gap: 8px;
+  }
 }
 
 //
@@ -60,7 +99,6 @@
   display: grid;
   grid-template-columns: auto 1180px auto;
   border-top: 1px solid hsla(0, 0%, 100%, .1);
-
 }
 
 .copyrigts_container {
@@ -68,9 +106,13 @@
   display: grid;
   grid-template-columns: 1fr auto;
 
-  font-size: 16px;
+  font-size: 15px;
   line-height: normal;
   padding: 20px;
+
+  a:hover {
+    color: #fff;
+  }
 }
 
 //
@@ -106,6 +148,10 @@
     grid-template-columns: 1fr;
     gap: 10px;
     justify-self: center;
+
+    .company {
+      margin-top: 0;
+    }
   }
 
   .copyrigts {

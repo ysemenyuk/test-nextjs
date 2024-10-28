@@ -16,9 +16,15 @@
         border: 2px solid #fff;
     }
 
-    .text {
+    .title {
         font-size: 16px;
         line-height: normal;
+        font-weight: 400;
+        margin: 0;
+    }
+
+    .title:hover {
+        color: var(--link-color-hover);
     }
 }
 

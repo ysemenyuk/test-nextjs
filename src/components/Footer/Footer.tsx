@@ -1,54 +1,87 @@
 import cn from 'classnames';
 import styles from './footer.module.scss';
-import { footer } from '@/src/data/footer';
+import { main } from '@/src/data/main';
 import Link from 'next/link';
+import { IconMail, IconPhone } from '@tabler/icons-react';
 
-const { top_text, copy_text, privacy, company, uslugi, systems, contacts } =
-  footer;
+const {
+  footerSlogan,
+  copyText,
+  privacy,
+  uslugiMenu,
+  systemsMenu,
+  contacts,
+  messengers,
+} = main;
+
+const { adress, phone1, phone2, mail } = contacts;
 
 export const Footer = ({ className }: any): JSX.Element => {
-  const uslugiContent = uslugi.content.map((item: string) => (
-    <li key={item}>{item}</li>
-  ));
-
-  const systemsContent = systems.content.map((item: any) => (
+  const uslugiContent = uslugiMenu.content.map((item: any) => (
     <li key={item.text}>
       <Link href={item.href} className={styles.link}>
-        {item.text} {item.icon}
+        {item.text}
       </Link>
     </li>
   ));
 
-  const contactsContent = contacts.content.map((item: string) => (
-    <li key={item}>{item}</li>
+  const systemsContent = systemsMenu.content.map((item: any) => (
+    <li key={item.text}>
+      <Link href={item.href} className={styles.link}>
+        {item.text}
+      </Link>
+    </li>
+  ));
+
+  const messengerslist = messengers.map((item: any) => (
+    <li key={item.name}>
+      <Link className={styles.messengers_item} href={item.href}>
+        {item.icon}
+      </Link>
+    </li>
   ));
 
   return (
     <footer className={cn(className, styles.footer)}>
-      <div className={styles.action}>{top_text}</div>
+      <div className={styles.action}>{footerSlogan}</div>
       <div className={styles.widgets}>
         <div className={styles.widgets_container}>
           <div>
-            <h4>{uslugi.title}</h4>
+            <h4>{uslugiMenu.title}</h4>
             <ul>{uslugiContent}</ul>
           </div>
           <div>
-            <h4>{systems.title}</h4>
+            <h4>{systemsMenu.title}</h4>
             <ul>{systemsContent}</ul>
           </div>
           <div>
             <h4>{contacts.title}</h4>
-            <ul>{contactsContent}</ul>
+            <div className={styles.contacts}>
+              <Link className={cn(styles.contacts_item)} href={phone1.href}>
+                <IconPhone />
+                {phone1.text}
+              </Link>
+              <Link className={cn(styles.contacts_item)} href={phone2.href}>
+                <IconPhone />
+                {phone2.text}
+              </Link>
+              <Link className={cn(styles.contacts_item)} href={mail.href}>
+                <IconMail />
+                {mail.text}
+              </Link>
+            </div>
           </div>
           <div>
-            <h4>{company.title}</h4>
-            <p>{company.content}</p>
+            <div className={styles.company}>
+              <div className={styles.adress}>{adress}</div>
+              <ul className={styles.messengers}>{messengerslist}</ul>
+            </div>
           </div>
         </div>
       </div>
       <div className={styles.copyrigts}>
         <div className={styles.copyrigts_container}>
-          <span>{copy_text}</span>
+          <span>{copyText}</span>
           <Link href={privacy.href}>{privacy.text}</Link>
         </div>
       </div>
