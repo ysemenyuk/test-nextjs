@@ -18,11 +18,11 @@ export const footer: any = {
               слаботочных систем и автоматики. 
               Работаем в Москве и МО с 2012 года.`,
   },
-  uslugi: {
+  uslugiMenu: {
     title: 'Услуги',
     content: ['Проектирование', 'Монтаж', 'Обслуживание'],
   },
-  systems: {
+  systemsMenu: {
     title: 'Системы',
     content: [
       { text: 'Пожарные системы', href: '', icon: <IconExternalLink /> },

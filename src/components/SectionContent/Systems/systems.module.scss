@@ -36,6 +36,15 @@
     }
 }
 
+.item:hover {
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+
+    h4 {
+        color: var(--link-color-hover);
+    }
+}
+
 // media
 
 @media (576px < width <= 1220px) {

@@ -5,11 +5,11 @@ import Image from 'next/image';
 const Item = ({ item }: any): JSX.Element => (
   <div key={item.id} className={cn(styles.item)}>
     <div className={cn(styles.image_wrapper)}>
-      <Image alt={item.text_1} src={item.image} className={cn(styles.image)} />
+      <Image alt={item.title} src={item.image} className={cn(styles.image)} />
     </div>
     <div className={cn(styles.text_wrapper)}>
-      <h4 className={cn(styles.title)}>{item.text_1}</h4>
-      <p className={cn(styles.text)}>{item.text_2}</p>
+      <h4 className={cn(styles.title)}>{item.title}</h4>
+      <p className={cn(styles.text)}>{item.text}</p>
     </div>
   </div>
 );

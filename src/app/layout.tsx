@@ -65,7 +65,7 @@ export default function RootLayout({
       <body className={november.className}>
         <MantineProvider theme={theme}>
           <div className="wrapper">
-            <Header className="header" />
+            {/* <Header className="header" /> */}
             <main className="main">{children}</main>
             <Footer className="footer" />
             <ScrollToTop />
