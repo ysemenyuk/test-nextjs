@@ -51,8 +51,8 @@ import dop3 from '@/public/images/dop-3.png';
 import dop4 from '@/public/images/dop-4.png';
 
 import aps1 from '@/public/images/aps-1-Photoroom.png';
-import aps2 from '@/public/images/aps-2-Photoroom.png';
-import aps3 from '@/public/images/aps-3-Photoroom.png';
+// import aps2 from '@/public/images/aps-2-Photoroom.png';
+// import aps3 from '@/public/images/aps-3-Photoroom.png';
 import aps4 from '@/public/images/aps-4-Photoroom.png';
 import aps5 from '@/public/images/aps-5-Photoroom.png';
 import aps6 from '@/public/images/aps-6-Photoroom.png';
@@ -255,7 +255,7 @@ export const apsTypes: any = {
 export const aps: any = {
   id: 'aps',
   wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
-  // heading: { sup: '', main: 'Пожарная сигнализация (АПС)', sub: '' },
+  heading: { sup: '', main: 'Пожарная сигнализация (АПС)', sub: '' },
   content: {
     image: aps5,
     imageMobile: apsMobile,

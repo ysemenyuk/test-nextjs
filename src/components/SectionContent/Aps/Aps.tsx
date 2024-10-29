@@ -11,7 +11,7 @@ export const Aps = ({ data, className }: any): JSX.Element => {
         <Image alt={data.alt} src={data.image} className={cn(styles.image)} />
       </div>
       <div className={cn(styles.block)}>
-        <h3 className={cn(styles.title)}>{data.title}</h3>
+        {/* <h3 className={cn(styles.title)}>{data.title}</h3> */}
         <div className={cn(styles.text)}>{text}</div>
       </div>
     </div>
