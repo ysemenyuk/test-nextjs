@@ -53,6 +53,9 @@ import dop4 from '@/public/images/dop-4.png';
 import aps1 from '@/public/images/aps-1-Photoroom.png';
 import aps2 from '@/public/images/aps-2-Photoroom.png';
 import aps3 from '@/public/images/aps-3-Photoroom.png';
+import aps4 from '@/public/images/aps-4-Photoroom.png';
+import aps5 from '@/public/images/aps-5-Photoroom.png';
+import aps6 from '@/public/images/aps-6-Photoroom.png';
 
 //
 // hero
@@ -223,7 +226,7 @@ export const apsTypes: any = {
       ],
     },
     {
-      image: aps2,
+      image: aps4,
       alt: 'Адресные системы',
       title: 'Адресные системы',
       text: [
@@ -233,7 +236,7 @@ export const apsTypes: any = {
       ],
     },
     {
-      image: aps3,
+      image: aps6,
       alt: 'Радиоканальные системы',
       title: 'Радиоканальные системы',
       text: [
@@ -254,7 +257,7 @@ export const aps: any = {
   wrapper: { bgColor: '', bgImage: '', altBgImage: '' },
   // heading: { sup: '', main: 'Пожарная сигнализация (АПС)', sub: '' },
   content: {
-    image: aps2,
+    image: aps5,
     imageMobile: apsMobile,
     alt: 'Автоматическая пожарная сигнализация (АПС)',
     title: 'Автоматическая пожарная сигнализация (АПС)',

@@ -8,7 +8,6 @@ import { IconPointFilled } from '@tabler/icons-react';
 import { Breadcrumbs } from '../Breadcrumbs/Breadcrumbs';
 import { useCountStore } from '@/src/stores/modalStore';
 import { useMediaQuery } from '@mantine/hooks';
-import { HoverCard, Text } from '@mantine/core';
 
 export const Hero = ({ data, className }: any): JSX.Element => {
   const [supText1, supText2, supText3] = data.heading_sup;
@@ -58,18 +57,6 @@ export const Hero = ({ data, className }: any): JSX.Element => {
             <Button rounded onClick={open}>
               {data.btnText}
             </Button>
-            <HoverCard withinPortal={false} shadow="md">
-              <HoverCard.Target>
-                <button>Hover to reveal the card</button>
-              </HoverCard.Target>
-              <HoverCard.Dropdown>
-                <Text size="sm">
-                  Hover card is revealed when user hovers over target element,
-                  it will be hidden once mouse is not over both target and
-                  dropdown elements
-                </Text>
-              </HoverCard.Dropdown>
-            </HoverCard>
           </div>
         </div>
       </div>
