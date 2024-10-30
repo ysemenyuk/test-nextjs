@@ -17,7 +17,7 @@ export const main: any = {
   },
   leftText: 'Работаем с 2012 г. Москва и МО.',
   mainMenu: [
-    { text: 'О компании', href: '/', target: '_self', icon: '' },
+    { text: 'О компании', href: '/company', target: '_self', icon: '' },
     {
       text: 'Услуги',
       href: '/',
@@ -66,7 +66,7 @@ export const main: any = {
     },
     // { text: 'Решения', href: '', icon: '' },
     // { text: 'Расчеты', href: '', icon: '' },
-    { text: 'Контакты', href: '', icon: '' },
+    { text: 'Контакты', href: '/contacts', icon: '' },
   ],
 
   contacts: {
@@ -91,6 +91,7 @@ export const main: any = {
       icon: <IconMail />,
     },
     adress: `124460, г.Москва, \nул.Консруктора Гуськова, \nд.14, стр.2, офис 2.27`,
+    adress2: `124460, г.Москва, \nул.Консруктора Гуськова, д.14, стр.2, офис 2.27`,
   },
   messengers: [
     {
@@ -104,7 +105,7 @@ export const main: any = {
       icon: <TelegramIcon />,
     },
     {
-      name: 'vk',
+      name: 'Вконтакте',
       href: 'https://vk.me/orionsbru',
       icon: <VkIcon />,
     },
@@ -147,6 +148,36 @@ export const main: any = {
         text: 'Контроль доступа',
         href: 'https://orionsb.ru/kontrol-dostupa/',
         target: '_blank',
+        icon: '',
+      },
+    ],
+  },
+
+  sidebarMenu: {
+    title: 'Орион',
+    content: [
+      {
+        text: 'О компании',
+        href: '/company',
+        target: '_self',
+        icon: '',
+      },
+      {
+        text: 'Контакты',
+        href: '/contacts',
+        target: '_self',
+        icon: '',
+      },
+      {
+        text: 'Реквизиты',
+        href: '/rekvizity',
+        target: '_self',
+        icon: '',
+      },
+      {
+        text: 'Отправить заявку',
+        href: '/zayavka',
+        target: '_self',
         icon: '',
       },
     ],

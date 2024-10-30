@@ -16,7 +16,7 @@ const orion: MantineColorsTuple = [
 ];
 
 export const theme = createTheme({
-  primaryColor: 'orion',
+  // primaryColor: 'orion',
   colors: {
     orion,
   },

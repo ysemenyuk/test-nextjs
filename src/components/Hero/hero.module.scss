@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: auto 1180px auto;
   padding: 50px 0;
-  margin-top: -136px;
+  margin-top: -190px;
   position: relative;
 
   // outline: 1px solid rgb(255, 0, 0);
@@ -16,6 +16,13 @@
     z-index: 1;
 
     // outline: 1px solid green;
+}
+
+.breadcrumbs {
+  margin-bottom: 40px;
+  color: #ffffffbb;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .heading_container {
@@ -84,13 +91,6 @@
 
 .bg_color {
   background: linear-gradient(0deg, #525252 0%, #676666 50%, #525252 100%);
-}
-
-.hoverCard {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
 }
 
 //

@@ -41,7 +41,7 @@ export default function Home() {
   ];
 
   return (
-    <>
+    <main className="main">
       <Hero data={data.hero} />
 
       {sections.map(([Content, data, ...classNames]) => {
@@ -57,6 +57,6 @@ export default function Home() {
       })}
 
       <CallBackModal />
-    </>
+    </main>
   );
 }
